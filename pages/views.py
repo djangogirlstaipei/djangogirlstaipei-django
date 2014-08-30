@@ -1,15 +1,25 @@
 import os
 from django.http import Http404
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 from .utils import markdown_to_html
 
 
-class HomeView(TemplateView):
-    template_name = 'pages/home.html'
+# class HomeView(TemplateView):
+#     template_name = 'pages/home.html'
 
 
-class TutorialListView(TemplateView):
-    template_name = 'pages/tutorial_list.html'
+# class TutorialListView(TemplateView):
+#     template_name = 'pages/tutorial_list.html'
+
+
+class HomeView(RedirectView):
+    permanent = False
+    url = 'http://djangogirls.org/taipei'
+
+
+class TutorialListView(RedirectView):
+    permanent = False
+    url = 'http://djangogirls.org/taipei'
 
 
 class MarkdownPageView(TemplateView):
