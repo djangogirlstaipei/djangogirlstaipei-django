@@ -1,0 +1,48 @@
+/* Overrides */
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+a {
+    color: #7F7759;
+}
+a:hover, a:focus, a:active {
+    color: #7F6F33;
+}
+.navbar-default {
+    background: rgb(255, 148, 0);
+    border-color: rgb(255, 148, 0);
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    color: transparent;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-toggle .icon-bar {
+    color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-toggle .icon-bar:hover {
+    color: #fff;
+}
+
+/* Custom styles */
+footer {
+    background: rgb(255, 148, 0);
+    margin-top: 50px;
+    padding: 1em;
+    color: #eee;
+    text-align: center;
+}
+footer p {
+    margin: 0;
+}
+footer a {
+    color: #FFDE66;
+}
+footer a:hover, footer a:focus, footer a:active {
+    color: #FFEEB2;
+}

@@ -1,0 +1,6 @@
+https://bit.ly/django17c3
+cython
+mistune
+pygments
+pyyaml
+unicode-slugify

@@ -1,0 +1,45 @@
+{% extends 'boilerplate.html' %}
+
+{% load i18n staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+{% endblock extra_css %}
+
+
+{% block title %}{% trans 'Django Girls Taipei' %}{% endblock title %}
+
+
+{% block body %}
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <span class="navbar-brand" href="/">{% trans 'Django Girls Taipei' %}</span>
+    </div>
+  </div>
+</nav>
+
+<div class="content container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      {% block content %}{% endblock content %}
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Django Girls Taipei 是由 <a href="https://twitter.com/flywindy">Michelle Leu</a> 組織。感謝 <a href="http://twitter.com/olasitarska">Ola Sitarska</a> 與 <a href="http://twitter.com/asednecka">Ola Sendecka</a> 的協助。</p>
+    <p>Django Girls Taipei 是 Django Girls 的一部份。所有成員均須遵守<a href="http://djangogirls.org/pages/coc/">行為準則（英文）</a>。</p>
+  </div>
+</footer>
+
+{% endblock body %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'pages/css/page.css' %}">
+<style>{{ hilite_style|safe }}</style>
+{% endblock extra_css %}
+
+
+{% block title %}
+{% if title %}
+  {{ title }} |
+{% endif %}
+{{ block.super }}
+{% endblock title %}
+
+
+{% block content %}
+
+{{ content|safe }}
+
+{% endblock content %}
