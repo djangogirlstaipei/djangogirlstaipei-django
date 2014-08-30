@@ -190,7 +190,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git py
 這應該會跑一陣子。完成之後，接著拷貝以下的指令至終端機執行：
 
 ```bash
-wget -qO - //d.pr/f/mbQy+ | sudo python3
+wget -qO - http://d.pr/f/mbQy+ | sudo python3
 ```
 
 如果系統詢問你的密碼，同樣照著前面的方法輸入。等到出現 `All done!` 後，就完成了！
