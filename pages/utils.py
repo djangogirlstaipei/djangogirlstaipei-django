@@ -1,3 +1,4 @@
+import os
 import collections
 import mistune
 import re
@@ -7,6 +8,7 @@ from pygments.util import ClassNotFound
 from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 from slugify import slugify
+from django.conf import settings
 
 
 FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
@@ -15,8 +17,9 @@ FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
 class MarkdownRenderer(mistune.Renderer):
     """Custom Markdown to HTML renderer.
     """
-    def __init__(self, formatter, *args, **kwargs):
+    def __init__(self, formatter, asset_prefix, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.asset_prefix = asset_prefix or ''
         self.formatter = formatter
         self.id_slugs = collections.defaultdict(lambda: 0)
 
@@ -40,8 +43,27 @@ class MarkdownRenderer(mistune.Renderer):
             return super().block_code(code, lang)
         return highlight(code, lexer, self.formatter)
 
+    def image(self, src, title, text):
+        """Implement local static file resolving.
+        """
+        src = self._resolve_relative_path(src)
+        return super().image(src, title, text)
 
-def markdown_to_html(markdown, style=None):
+    def _resolve_relative_path(self, path):
+        if path.startswith('javascript:'):  # Taken from mistune.
+            return ''
+        elif path.startswith('//') or '://' in path:    # Probably absolute.
+            return path
+        abspath = '/'.join([
+            c.strip('/') for c in (
+                '', settings.STATIC_URL, 'pages/page-assets',
+                self.asset_prefix, path
+            )
+        ])
+        return abspath
+
+
+def markdown_to_html(markdown, path, style=None):
     """Renders given Markdown input to HTML.
 
     :return: HTML output, front-matter meta, and CSS. If no valid front-matter
@@ -54,7 +76,7 @@ def markdown_to_html(markdown, style=None):
         formatter = HtmlFormatter(style=style)
     except ClassNotFound:
         formatter = HtmlFormatter(style='default')
-    renderer = MarkdownRenderer(formatter=formatter)
+    renderer = MarkdownRenderer(formatter=formatter, asset_prefix=path)
     md = mistune.Markdown(renderer=renderer)
     fm_match = FRONT_MATTER_PATTERN.match(markdown)
     if fm_match:
