@@ -57,7 +57,7 @@ class MarkdownRenderer(mistune.Renderer):
         abspath = '/'.join([
             c.strip('/') for c in (
                 '', settings.STATIC_URL, 'pages/page-assets',
-                self.asset_prefix, path
+                self.asset_prefix, path,
             )
         ])
         return abspath
