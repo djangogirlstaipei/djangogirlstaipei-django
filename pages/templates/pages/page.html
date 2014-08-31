@@ -10,8 +10,8 @@
 
 
 {% block title %}
-{% if title %}
-  {{ title }} |
+{% if meta.title %}
+  {{ meta.title }} |
 {% endif %}
 {{ block.super }}
 {% endblock title %}

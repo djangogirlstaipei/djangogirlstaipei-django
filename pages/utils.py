@@ -9,6 +9,7 @@ from pygments.lexers import get_lexer_by_name
 from pygments.formatters import HtmlFormatter
 from slugify import slugify
 from django.conf import settings
+from django.contrib.staticfiles import finders
 
 
 FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
@@ -17,9 +18,9 @@ FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
 class MarkdownRenderer(mistune.Renderer):
     """Custom Markdown to HTML renderer.
     """
-    def __init__(self, formatter, asset_prefix, *args, **kwargs):
+    def __init__(self, formatter, bundlepath, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.asset_prefix = asset_prefix or ''
+        self.bundlepath = bundlepath or ''
         self.formatter = formatter
         self.id_slugs = collections.defaultdict(lambda: 0)
 
@@ -46,39 +47,47 @@ class MarkdownRenderer(mistune.Renderer):
     def image(self, src, title, text):
         """Implement local static file resolving.
         """
-        src = self._resolve_relative_path(src)
+        src = self._resolve_asset_path(src)
         return super().image(src, title, text)
 
-    def _resolve_relative_path(self, path):
+    def _resolve_asset_path(self, path):
         if path.startswith('javascript:'):  # Taken from mistune.
             return ''
         elif path.startswith('//') or '://' in path:    # Probably absolute.
             return path
         abspath = '/'.join([
             c.strip('/') for c in (
-                '', settings.STATIC_URL, 'pages/page-assets',
-                self.asset_prefix, path,
+                '', settings.STATIC_URL, self.bundlepath, path,
             )
         ])
         return abspath
 
 
-def markdown_to_html(markdown, path, style=None):
+def markdown_to_html(path, style=None):
     """Renders given Markdown input to HTML.
 
+    :path str: Static file path to a given post. The "post" should be a
+        directory containing file ``text.md``.
+    :prefix str: Prefix prepended to :path: when resolving static file path.
+        Default is ``posts``.
     :return: HTML output, front-matter meta, and CSS. If no valid front-matter
         can be found, the second item returned will be an empty ``dict``.
-    :rtype: A three-tuple (``str``, ``dict``, ``str``).
+    :rtype: A three-tuple (``str``, ``dict``, ``str``), or ``None`` on errors.
     """
+    try:
+        with open(os.path.join(finders.find(path) or '', 'text.md')) as f:
+            text = f.read()
+    except OSError:
+        return None
     if style is None:
         style = 'default'
     try:
         formatter = HtmlFormatter(style=style)
     except ClassNotFound:
         formatter = HtmlFormatter(style='default')
-    renderer = MarkdownRenderer(formatter=formatter, asset_prefix=path)
+    renderer = MarkdownRenderer(formatter=formatter, bundlepath=path)
     md = mistune.Markdown(renderer=renderer)
-    fm_match = FRONT_MATTER_PATTERN.match(markdown)
+    fm_match = FRONT_MATTER_PATTERN.match(text)
     if fm_match:
         try:
             front_matter = yaml.load(fm_match.group(1))
@@ -86,6 +95,6 @@ def markdown_to_html(markdown, path, style=None):
             front_matter = {}
         else:
             offset = fm_match.end(0) + 1
-            markdown = markdown[offset:]
-    html = md.render(markdown)
+            text = text[offset:]
+    html = md.render(text)
     return html, front_matter, formatter.get_style_defs('.highlight > pre')

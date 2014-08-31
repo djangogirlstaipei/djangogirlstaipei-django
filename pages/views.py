@@ -32,24 +32,19 @@ class MarkdownPageView(TemplateView):
         :param str style: Name of Pygment style to use for syntax highlighting.
             If an invalid name is provided, the default style is used.
         """
-        path = self.kwargs['path']
-        dirname = os.path.dirname(__file__)
-        filename = '{path}.md'.format(path=path)
-        abspath = os.path.join(dirname, 'pages', filename)
-        try:
-            with open(abspath) as f:
-                markdown = f.read()
-        except OSError:
+        comps = os.path.join(self.kwargs['path'].split('/'))
+        bundlepath = os.path.join('pages', 'posts', *comps) + '.textbundle'
+        results = markdown_to_html(bundlepath, style)
+        if results is None:
             raise Http404
-        html, meta, hilite_style = markdown_to_html(markdown, path, style)
+        html, meta, hilite_style = results
         return html, meta, hilite_style
 
     def get_context_data(self, **kwargs):
         style = self.request.GET.get('style', 'friendly')
         content, meta, hilite_style = self.get_content(style)
         kwargs.update({
-            'content': content,
-            'title': meta.get('title', ''),
+            'content': content, 'meta': meta,
             'hilite_style': hilite_style,
         })
         return super().get_context_data(**kwargs)
