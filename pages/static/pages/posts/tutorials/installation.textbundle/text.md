@@ -154,7 +154,11 @@ Run `brew help` to get started
 brew install git python3
 ```
 
-當 prompt 再度出現（畫面最後一行是以 `$` 結尾）時，就代表安裝完成了，恭喜！
+當 prompt 再度出現（畫面最後一行是以 `$` 結尾）時，輸入 `python3` 看看。你應該會看到類似下面的畫面：
+
+![OS X Python Prompt](assets/osx/python-interactive.png)
+
+就代表安裝完成了，恭喜！這個視窗可以直接關掉沒關係，可能會跳警告但是不用理它。
 
 回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！
 
@@ -193,4 +197,10 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git py
 wget -qO - http://d.pr/f/mbQy+ | sudo python3
 ```
 
-如果系統詢問你的密碼，同樣照著前面的方法輸入。等到出現 `All done!` 後，就完成了！
+如果系統詢問你的密碼，同樣照著前面的方法輸入。等到出現 `All done!` 以及下一個 prompt 之後，輸入 `python3` 看看。你應該會看到類似下面的畫面：
+
+![Windows Python Prompt](assets/ubuntu/python-interactive.png)
+
+代表安裝成功！這個視窗可以直接關掉沒關係。
+
+回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！
