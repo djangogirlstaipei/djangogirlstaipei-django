@@ -1,5 +1,5 @@
 """
-WSGI config for djangogirlstw project.
+WSGI config for djangogirlstaipei project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

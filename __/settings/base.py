@@ -1,5 +1,5 @@
 """
-Django settings for djangogirlstw project.
+Django settings for djangogirlstaipei project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/dev/topics/settings/
