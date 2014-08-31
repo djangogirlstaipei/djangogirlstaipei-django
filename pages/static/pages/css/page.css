@@ -2,3 +2,8 @@ p img {
     display: block;
     margin: 0 auto;
 }
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
