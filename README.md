@@ -10,6 +10,13 @@ Currently this is little more than a Markdown static page-serving app. We plan t
 TODO: Put instructions on how to add a new Markdown document here.
 
 
+## License
+
+All source code and assets are released under the terms of The MIT License, with the following exceptions:
+
+* The Django Girls logo (`base/static/base/img/logo.png`) and favicon (`base/static/base/img/favicon.ico`) belong to Django Girls.
+
+
 ## Related links
 
 * [Django Girls](http://djangogirls.org)
