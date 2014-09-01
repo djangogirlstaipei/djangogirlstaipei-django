@@ -52,7 +52,7 @@ class MarkdownRenderer(mistune.Renderer):
 
     def _resolve_asset_path(self, path):
         if path.startswith('javascript:'):  # Taken from mistune.
-            return ''
+            return path
         elif path.startswith('//') or '://' in path:    # Probably absolute.
             return path
         abspath = '/'.join([
