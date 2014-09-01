@@ -1,6 +1,6 @@
 # Django Girls Taipei
 
-Supplemental materials for Django Girls Taipei events. Used with <DjangoGirls.org/taipei>. :)
+Supplemental materials for Django Girls Taipei events. Used with [DjangoGirls.org/taipei](http://djangogirls.org/taipei). :)
 
 Currently this is little more than a Markdown static page-serving app. We plan to add more things in the future.
 
