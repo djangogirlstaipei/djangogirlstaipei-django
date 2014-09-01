@@ -40,7 +40,6 @@
 
 {% endblock body %}
 
-
-</body>
-
-</html>
+{% block extra_js %}
+{% include 'base/includes/analytics.html' with unique_id='UA-5684347-7' %}
+{% endblock extra_js %}
