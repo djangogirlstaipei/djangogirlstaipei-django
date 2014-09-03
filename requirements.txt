@@ -1,4 +1,4 @@
-https://bit.ly/django17c3
+django
 git+https://github.com/kennethreitz/dj-static.git
 cython
 dj-database-url
