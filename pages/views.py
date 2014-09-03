@@ -4,6 +4,12 @@ from django.views.generic import TemplateView, RedirectView
 from .utils import markdown_to_html, TutorialMarkdownRenderer
 
 
+class CurrentOSMixin(object):
+    def get_context_data(self, **kwargs):
+        kwargs.update({'current_os': self.request.GET.get('os', 'windows')})
+        return super().get_context_data(**kwargs)
+
+
 # class HomeView(TemplateView):
 #     template_name = 'pages/home.html'
 
@@ -51,7 +57,7 @@ class MarkdownPageView(TemplateView):
         return super().get_context_data(**kwargs)
 
 
-class TutorialMarkdownPageView(MarkdownPageView):
+class TutorialMarkdownPageView(CurrentOSMixin, MarkdownPageView):
 
     template_name = 'pages/tutorial_detail.html'
     renderer_class = TutorialMarkdownRenderer
@@ -63,6 +69,6 @@ class TutorialMarkdownPageView(MarkdownPageView):
                 ('windows', 'Windows'),
                 ('osx', 'OS X'),
                 ('linux', 'Linux'),
-            ),
+            )
         })
         return data

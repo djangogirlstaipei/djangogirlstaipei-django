@@ -1,4 +1,4 @@
-(function ($) {
+(function ($, defaultOS) {
 
 $('.language-toggles a').click(function (e) {
   e.preventDefault();
@@ -7,6 +7,7 @@ $('.language-toggles a').click(function (e) {
   $(this).parent().siblings().children('a').removeClass('active');
 
   var name = $(this).data('name');
+  History.replaceState(null, $(document).find('title').text(), '?os=' + name);
   $('pre.os').hide().filter('.' + name).show();   // Show only current OS.
 
   // Show fallback is a block does not contain current OS.
@@ -15,6 +16,6 @@ $('.language-toggles a').click(function (e) {
   });
 });
 
-$('.language-toggles .windows').click();
+$('.language-toggles .' + defaultOS).click();
 
-})(jQuery);
+})(jQuery, DEFAULT_OS);
