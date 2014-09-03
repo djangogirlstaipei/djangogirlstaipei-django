@@ -6,6 +6,8 @@ urlpatterns = patterns(
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^tutorials/$', views.TutorialListView.as_view(),
         name='tutorial_list'),
+    url(r'^(?P<path>tutorials\/[\w\/-]+)/$',
+        views.TutorialMarkdownPageView.as_view()),
     url(r'^(?P<path>[\w\/-]+)/$', views.MarkdownPageView.as_view(),
         name='page'),
 )

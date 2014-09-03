@@ -63,7 +63,38 @@ class MarkdownRenderer(mistune.Renderer):
         return abspath
 
 
-def markdown_to_html(path, style=None):
+class TutorialMarkdownRenderer(MarkdownRenderer):
+    """Custom Markdown to HTML renderer for tutorial pages.
+    """
+    CONSOLE_DELIMITER_PATTERN = re.compile(r'^---([\w-]+)$', re.MULTILINE)
+
+    def block_code(self, code, lang):
+        """Implement console language rendering.
+        """
+        if lang == 'console':
+            return self.block_console(code)
+        return super().block_code(code, lang)
+
+    def block_console(self, content, default='default'):
+        """Special OS-specific "console language"
+
+        A console block is similar to a code block, but instead of outputting
+        content verbatim, a console block can optionally use ``---(os-name)``
+        delimiters to denote OS-specific commands. The first block is the
+        fallback block, and its OS is specified in ``default``.
+        """
+        pattern = self.CONSOLE_DELIMITER_PATTERN
+        matches = [b.strip() for b in pattern.split(content)]
+        matches.insert(0, default)
+
+        it = iter(matches)
+        str_format = '<pre class="os {name}"><code>{code}</code></pre>'
+        return '<div>{code}</div>\n'.format(code='\n'.join([
+            str_format.format(name=name, code=next(it)) for name in it
+        ]))
+
+
+def markdown_to_html(path, style=None, renderer_cls=None):
     """Renders given Markdown input to HTML.
 
     :path str: Static file path to a given post. The "post" should be a
@@ -74,6 +105,8 @@ def markdown_to_html(path, style=None):
         can be found, the second item returned will be an empty ``dict``.
     :rtype: A three-tuple (``str``, ``dict``, ``str``), or ``None`` on errors.
     """
+    if renderer_cls is None:
+        renderer_cls = MarkdownRenderer
     try:
         with open(os.path.join(finders.find(path) or '', 'text.md')) as f:
             text = f.read()
@@ -85,7 +118,7 @@ def markdown_to_html(path, style=None):
         formatter = HtmlFormatter(style=style)
     except ClassNotFound:
         formatter = HtmlFormatter(style='default')
-    renderer = MarkdownRenderer(formatter=formatter, bundlepath=path)
+    renderer = renderer_cls(formatter=formatter, bundlepath=path)
     md = mistune.Markdown(renderer=renderer)
     fm_match = FRONT_MATTER_PATTERN.match(text)
     if fm_match:

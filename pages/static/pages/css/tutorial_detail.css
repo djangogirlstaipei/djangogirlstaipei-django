@@ -1,0 +1,19 @@
+.language-toggles {
+    margin: 1em 0.5em;
+}
+.language-toggles > span:before {
+    content: "|";
+    color: #7F7759;
+    padding-left: 0.1em;
+    padding-right: 0.2em;
+}
+.language-toggles > span:first-child:before {
+    content: none;
+}
+.language-toggles .active {
+    font-weight: bold;
+}
+.language-toggles a.active:hover {
+    text-decoration: none;
+    cursor: default;
+}

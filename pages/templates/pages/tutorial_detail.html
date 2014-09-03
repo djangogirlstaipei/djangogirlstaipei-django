@@ -1,0 +1,29 @@
+{% extends 'pages/page.html' %}
+
+{% load staticfiles %}
+
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'pages/css/tutorial_detail.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+
+<div class="text-right language-toggles">
+  選擇你的作業系統：
+  {% for slug, name in os_list %}
+  <span><a href="#" class="{{ slug }}" data-name="{{ slug }}">{{ name }}</a></span>
+  {% endfor %}
+</div>
+
+{{ block.super }}
+
+{% endblock content %}
+
+
+{% block extra_js %}
+{{ block.super }}
+<script type="text/javascript" src="{% static 'pages/js/tutorial_detail.js' %}"></script>
+{% endblock extra_js %}
