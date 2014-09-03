@@ -75,6 +75,8 @@ title: "安裝開發環境"
 
 當你按下第二次 Enter 後，視窗會關閉。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
 
+![Django Environment 桌面捷徑](assets/windows/django-desktop-icon.png)
+
 雙擊打開它。你應該會看到這樣的畫面：
 
 ![Windows Command Prompt](assets/windows/command-prompt.png)
