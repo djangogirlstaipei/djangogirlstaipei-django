@@ -1,13 +1,8 @@
 import os
 from django.http import Http404
 from django.views.generic import TemplateView, RedirectView
+from base.views import CurrentOSMixin
 from .utils import markdown_to_html, TutorialMarkdownRenderer
-
-
-class CurrentOSMixin(object):
-    def get_context_data(self, **kwargs):
-        kwargs.update({'current_os': self.request.GET.get('os', 'windows')})
-        return super().get_context_data(**kwargs)
 
 
 # class HomeView(TemplateView):
@@ -64,11 +59,5 @@ class TutorialMarkdownPageView(CurrentOSMixin, MarkdownPageView):
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data.update({
-            'os_list': (
-                ('windows', 'Windows'),
-                ('osx', 'OS X'),
-                ('linux', 'Linux'),
-            )
-        })
+        data.update({'os_list': self.allowed_oses})
         return data

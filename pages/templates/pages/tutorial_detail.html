@@ -16,6 +16,10 @@
   {% for slug, name in os_list %}
   <span><a href="#" class="{{ slug }}" data-name="{{ slug }}">{{ name }}</a></span>
   {% endfor %}
+  <form method="post" action="{% url 'ajax:set_os' %}" class="hide">
+    {% csrf_token %}
+    {{ os_form }}
+  </form>
 </div>
 
 {{ block.super }}
@@ -25,7 +29,6 @@
 
 {% block extra_js %}
 {{ block.super }}
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/history.js/1.8/native.history.min.js"></script>
 <script type="text/javascript">var DEFAULT_OS = '{{ current_os }}';</script>
 <script type="text/javascript" src="{% static 'pages/js/tutorial_detail.js' %}"></script>
 {% endblock extra_js %}
