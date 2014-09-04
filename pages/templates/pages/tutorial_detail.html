@@ -11,15 +11,16 @@
 
 {% block content %}
 
-<div class="text-right language-toggles">
-  選擇你的作業系統：
-  {% for slug, name in os_list %}
-  <span><a href="#" class="{{ slug }}" data-name="{{ slug }}">{{ name }}</a></span>
-  {% endfor %}
-  <form method="post" action="{% url 'ajax:set_os' %}" class="hide">
+<div class="text-right language-switch row">
+  <form method="post" action="{% url 'ajax:set_os' %}">
     {% csrf_token %}
-    {{ os_form }}
+    選擇作業系統：{{ os_form.os }}
   </form>
+</div>
+
+<div class="alert alert-info" role="alert">
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <p>在開始之前，請先確認一下你用的作業系統。這個頁面的右上角（看那邊↗︎↗︎↗︎）應該會有一個「<strong>選擇作業系統</strong>」區塊。請依照你的作業系統選擇！</p>
 </div>
 
 {{ block.super }}
