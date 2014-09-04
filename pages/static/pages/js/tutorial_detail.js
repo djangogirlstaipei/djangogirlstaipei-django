@@ -7,7 +7,7 @@ $('.language-toggles a').click(function (e) {
   $(this).parent().siblings().children('a').removeClass('active');
 
   var name = $(this).data('name');
-  $('pre.os').hide().filter('.' + name).show();   // Show only current OS.
+  $('.os').hide().filter('.' + name).show();   // Show only current OS.
 
   // Show fallback is a block does not contain current OS.
   $('pre.os.default').each(function () {

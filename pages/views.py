@@ -2,7 +2,7 @@ import os
 from django.http import Http404
 from django.views.generic import TemplateView, RedirectView
 from base.views import CurrentOSMixin
-from .utils import markdown_to_html, TutorialMarkdownRenderer
+from .utils import markdown_to_html, TutorialRenderer
 
 
 # class HomeView(TemplateView):
@@ -55,7 +55,7 @@ class MarkdownPageView(TemplateView):
 class TutorialMarkdownPageView(CurrentOSMixin, MarkdownPageView):
 
     template_name = 'pages/tutorial_detail.html'
-    renderer_class = TutorialMarkdownRenderer
+    renderer_class = TutorialRenderer
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
