@@ -6,16 +6,10 @@ title: "安裝開發環境"
 
 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
 
-1. 安裝 Python 3.4。
-2. 安裝 Git。
+1. 安裝 Git。
+2. 安裝 Python 3.4。
 
-以下請根據你使用的作業系統，選擇合適的教學。
-
-* [Microsoft Windows](#microsoft-windows)
-* [OS X](#os-x)
-* [Linux](#linux)
-
-## Microsoft Windows
+((( windows
 
 ### 安裝 Git
 
@@ -89,9 +83,11 @@ title: "安裝開發環境"
 
 你可以直接關掉這個視窗。未來當我們說「打開終端機」時，就代表你需要用這個「Django Environment」捷徑打開視窗來使用。
 
-恭喜安裝成功！回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！
+恭喜安裝成功！
 
-## OS X
+)))
+
+((( osx
 
 ### 安裝 Homebrew
 
@@ -162,10 +158,9 @@ brew install git python3
 
 就代表安裝完成了，恭喜！這個視窗可以直接關掉沒關係，可能會跳警告但是不用理它。
 
-回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！
+)))
 
-
-## Linux
+((( linux
 
 這裡以 Ubuntu 14.04 (Trusty Tahr) 為例。如果你用其他的版本，請洽教練～
 
@@ -204,5 +199,7 @@ wget -qO - http://d.pr/f/mbQy+ | sudo python3
 ![Windows Python Prompt](assets/ubuntu/python-interactive.png)
 
 代表安裝成功！這個視窗可以直接關掉沒關係。
+
+)))
 
 回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！

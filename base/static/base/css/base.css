@@ -2,6 +2,9 @@
 body {
     font-family: 'Noto Sans', sans-serif;
 }
+p {
+    line-height: 1.6em;
+}
 a {
     color: #7F7759;
 }

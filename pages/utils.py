@@ -1,7 +1,8 @@
 import os
+import copy
 import collections
-import mistune
 import re
+import mistune
 import yaml
 from pygments import highlight
 from pygments.util import ClassNotFound
@@ -15,7 +16,51 @@ from django.contrib.staticfiles import finders
 FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
 
 
-class MarkdownRenderer(mistune.Renderer):
+class BlockGrammar(mistune.BlockGrammar):
+
+    os_switch = re.compile(
+        r'^ *\({3} *([\w _-]+) *\n'     # ((( class names
+        r'([\s\S]+?)\s*'
+        r'\){3} *(?:\n+|$)'             # )))
+    )
+
+
+class BlockLexer(mistune.BlockLexer):
+
+    default_features = copy.copy(mistune.BlockLexer.default_features)
+    default_features.insert(5, 'os_switch')
+
+    def __init__(self, rules=None, **kwargs):
+        if rules is None:
+            rules = BlockGrammar()
+        super().__init__(rules, **kwargs)
+
+    def parse_os_switch(self, m):
+        self.tokens.append({
+            'type': 'os_switch_open',
+            'os': m.group(1),
+        })
+        self.parse(m.group(2))
+        self.tokens.append({
+            'type': 'os_switch_close',
+        })
+
+
+class Markdown(mistune.Markdown):
+
+    def __init__(self, renderer=None, inline=None, block=None, **kwargs):
+        if block is None:
+            block = BlockLexer()
+        super().__init__(renderer, inline, block, **kwargs)
+
+    def parse_os_switch_open(self):
+        return self.renderer.os_switch_open(os=self.token['os'])
+
+    def parse_os_switch_close(self):
+        return self.renderer.os_switch_close()
+
+
+class Renderer(mistune.Renderer):
     """Custom Markdown to HTML renderer.
     """
     def __init__(self, formatter, bundlepath, *args, **kwargs):
@@ -23,6 +68,12 @@ class MarkdownRenderer(mistune.Renderer):
         self.bundlepath = bundlepath or ''
         self.formatter = formatter
         self.id_slugs = collections.defaultdict(lambda: 0)
+
+    def os_switch_open(self, os):
+        return '<div class="os {name}">\n'.format(name=os)
+
+    def os_switch_close(self):
+        return '</div>\n'
 
     def header(self, text, level, raw=None):
         """Auto header ID from slug of text.
@@ -63,7 +114,38 @@ class MarkdownRenderer(mistune.Renderer):
         return abspath
 
 
-def markdown_to_html(path, style=None):
+class TutorialRenderer(Renderer):
+    """Custom Markdown to HTML renderer for tutorial pages.
+    """
+    CONSOLE_DELIMITER_PATTERN = re.compile(r'^---([\w-]+)$', re.MULTILINE)
+
+    def block_code(self, code, lang):
+        """Implement console language rendering.
+        """
+        if lang == 'console':
+            return self.block_console(code)
+        return super().block_code(code, lang)
+
+    def block_console(self, content, default='default'):
+        """Special OS-specific "console language"
+
+        A console block is similar to a code block, but instead of outputting
+        content verbatim, a console block can optionally use ``---(os-name)``
+        delimiters to denote OS-specific commands. The first block is the
+        fallback block, and its OS is specified in ``default``.
+        """
+        pattern = self.CONSOLE_DELIMITER_PATTERN
+        matches = [b.strip() for b in pattern.split(content)]
+        matches.insert(0, default)
+
+        it = iter(matches)
+        str_format = '<pre class="os {name}"><code>{code}</code></pre>'
+        return '<div>{code}</div>\n'.format(code='\n'.join([
+            str_format.format(name=name, code=next(it)) for name in it
+        ]))
+
+
+def markdown_to_html(path, style=None, renderer_cls=None):
     """Renders given Markdown input to HTML.
 
     :path str: Static file path to a given post. The "post" should be a
@@ -74,6 +156,8 @@ def markdown_to_html(path, style=None):
         can be found, the second item returned will be an empty ``dict``.
     :rtype: A three-tuple (``str``, ``dict``, ``str``), or ``None`` on errors.
     """
+    if renderer_cls is None:
+        renderer_cls = Renderer
     try:
         with open(os.path.join(finders.find(path) or '', 'text.md')) as f:
             text = f.read()
@@ -85,8 +169,8 @@ def markdown_to_html(path, style=None):
         formatter = HtmlFormatter(style=style)
     except ClassNotFound:
         formatter = HtmlFormatter(style='default')
-    renderer = MarkdownRenderer(formatter=formatter, bundlepath=path)
-    md = mistune.Markdown(renderer=renderer)
+    renderer = renderer_cls(formatter=formatter, bundlepath=path)
+    md = Markdown(renderer=renderer)
     fm_match = FRONT_MATTER_PATTERN.match(text)
     if fm_match:
         try:

@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     'pages',
+    'ajax',
     'base',
     'django.contrib.admin',
     'django.contrib.auth',

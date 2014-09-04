@@ -1,7 +1,8 @@
 import os
 from django.http import Http404
 from django.views.generic import TemplateView, RedirectView
-from .utils import markdown_to_html
+from base.views import CurrentOSMixin
+from .utils import markdown_to_html, TutorialRenderer
 
 
 # class HomeView(TemplateView):
@@ -25,6 +26,7 @@ class TutorialListView(RedirectView):
 class MarkdownPageView(TemplateView):
 
     template_name = 'pages/page.html'
+    renderer_class = None
 
     def get_content(self, style):
         """Get content to display in the page.
@@ -34,7 +36,7 @@ class MarkdownPageView(TemplateView):
         """
         comps = os.path.join(self.kwargs['path'].split('/'))
         bundlepath = os.path.join('pages', 'posts', *comps) + '.textbundle'
-        results = markdown_to_html(bundlepath, style)
+        results = markdown_to_html(bundlepath, style, self.renderer_class)
         if results is None:
             raise Http404
         html, meta, hilite_style = results
@@ -48,3 +50,14 @@ class MarkdownPageView(TemplateView):
             'hilite_style': hilite_style,
         })
         return super().get_context_data(**kwargs)
+
+
+class TutorialMarkdownPageView(CurrentOSMixin, MarkdownPageView):
+
+    template_name = 'pages/tutorial_detail.html'
+    renderer_class = TutorialRenderer
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data.update({'os_list': self.allowed_oses})
+        return data
