@@ -1,9 +1,10 @@
 (function ($, defaultOS) {
 
 var switchOS = function (name) {
-  $('.os').hide().filter('.' + name).show();   // Show only current OS.
+  // Show only text code blocks for current OS.
+  $('.os').hide().filter('.' + name).show();
 
-  // Show fallback is a block does not contain current OS.
+  // Show fallback in code block collections without variant for current OS.
   $('pre.os.default').each(function () {
     $(this)[$(this).siblings('pre.os.' + name).size() ? 'hide' : 'show']();
   });
