@@ -1,9 +1,16 @@
 .language-switch {
     margin: auto 1em 1em auto;
+    float: right;
 }
 p {
     text-align: justify;
 }
 img {
     max-width: 100%;
+}
+.content .alert {
+    margin-top: 16px;
+}
+.content .alert .close {
+    margin-left: 8px;
 }
