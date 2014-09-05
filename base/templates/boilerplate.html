@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load i18n staticfiles %}
 
 <!DOCTYPE html>
 <html>
@@ -7,6 +7,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% block title %}{% endblock %}</title>
+
+{% block leading_head %}
+<meta name="description" content="{% block meta_description %}{% trans 'Django Girls Taipei is a one-day workshop about programming in Python and Django tailored for women.' %}{% endblock meta_description %}">
+<meta name="keywords" content="programming,web,python,django,html,tutorial,workshop,taipei,girls,women,females">
+<meta name="author" content="{% trans 'Django Girls Taipei' %}">
+<meta property="og:image" content="{% block meta_image %}{% endblock meta_image %}">
+{% endblock leading_head %}
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 {% block extra_css %}{% endblock extra_css %}
 </head>

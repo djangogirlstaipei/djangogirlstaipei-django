@@ -2,6 +2,8 @@
 
 {% load staticfiles %}
 
+{% block meta_description %}{{ content|striptags|slice:':150' }}{% endblock meta_description %}
+
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static 'pages/css/page.css' %}">
