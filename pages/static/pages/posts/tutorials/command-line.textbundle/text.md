@@ -193,11 +193,11 @@ cd ..\..
 我們從衣櫥出來之後，現在位置應該會類似這樣：
 
 ```console
-C:\Users\Tzu-ping Chung\bedroom
+C:\Users\Tzu-ping Chung
 ---osx
-/Users/uranusjr/bedroom
+/Users/uranusjr
 ---linux
-/home/uranusjr/bedroom
+/home/uranusjr
 ```
 
 ((( windows
@@ -233,7 +233,7 @@ bedroom/closet
 ---osx
 /Users/uranusjr/bedroom/closet
 ---windows
-C:\myhome\bedroom\closet
+C:\Tzu-ping Chung\bedroom\closet
 ```
 
 ### 「外面」
@@ -245,7 +245,7 @@ C:\myhome\bedroom\closet
 ---osx
 /Users/uranusjr/bedroom/closet
 ---windows
-C:\myhome\bedroom\closet
+C:\Tzu-ping Chung\bedroom\closet
 ```
 
 當我們輸入下面的指令：
