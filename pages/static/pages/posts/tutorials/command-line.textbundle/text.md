@@ -261,19 +261,19 @@ cd ..\..
 
 ## 拷貝
 
-你有一個朋友想在你家借住一晚。可是我們現在只有一間臥室——你自己要住的。所以我們現在要幫這位朋友蓋一間客房，叫做 `guestroom` 。
+你有一個朋友想在你家借住一晚。可是我們現在只有一間臥室——你自己要住的。所以我們現在要幫這位朋友蓋一間客房，叫做 `guest-room` 。
 
-當然，你也可以把上面的步驟重複一次，只是把 `bedroom` 改成 `guestroom`。但是你想要讓客房和你的臥室一模一樣，那麼直接把臥室拷貝（copy）一份會比較快。（這畢竟不是真實世界。）
+當然，你也可以把上面的步驟重複一次，只是把 `bedroom` 改成 `guest-room`。但如果你懶得裝潢，直接讓客房和你的臥室一模一樣可能會省事一些。那麼，直接把臥室拷貝（copy）一份會比較快！（這畢竟不是真實世界。）
 
-你可以在家目錄用下面的指令來把 `bedroom` 拷貝到 `guestroom`：
+你可以在家目錄用下面的指令來把 `bedroom` 拷貝到 `guest-room`：
 
 ```console
-cp bedroom guestroom
+cp bedroom guest-room
 ---windows
-xcopy /e bedroom guestroom
+xcopy /e bedroom guest-room
 ```
 
-這會把 `bedroom` 與它裡面的所有東西都複製一份，放到 `guestroom`。我們檢查一下有沒有成功：
+這會把 `bedroom` 與它裡面的所有東西都複製一份，放到 `guest-room`。我們檢查一下有沒有成功：
 
 ```console
 ls
@@ -281,13 +281,13 @@ ls
 dir /w
 ```
 
-是不是多一個 `guestroom` 了？進去檢查一下，裡面是不是真的和 `bedroom` 一樣有附衣櫃：
+是不是多一個 `guest-room` 了？進去檢查一下，裡面是不是真的和 `bedroom` 一樣有附衣櫃：
 
 ```console
-cd guestroom
+cd guest-room
 ls
 ---windows
-cd guestroom
+cd guest-room
 dir /w
 ```
 
@@ -301,17 +301,17 @@ cd ..
 
 你和朋友玩得很高興。但過了幾天之後，朋友回家，客房就空出來了。放著積灰塵也不好，我們來把它改裝成客廳吧！（這真的不是現實世界。）
 
-首先我們要把房間名字改掉。在命令列中，改名字與移動是一樣的概念，使用的指令也相同。在家目錄中使用下面的指令，就可以把 `guestroom` 改成 `living-room`：
+首先我們要把房間名字改掉。在命令列中，改名字與移動是一樣的概念，使用的指令也相同。在家目錄中使用下面的指令，就可以把 `guest-room` 改成 `living-room`：
 
 ```console
-mv guestroom living-room
+mv guest-room living-room
 ---windows
-move guestroom living-room
+move guest-room living-room
 ```
 
 確認一下是不是有成功。現在家目錄裡應該會有 `bedroom` 與 `living-room` 兩個房間（還有一些其他目錄，不過我們不管它們）。
 
-客廳裡擺衣櫥好像怪怪的。我們來把它搬到自己房間。噢不過房間裡已經有一個衣櫃，所以這個就叫 `closet2` 好了。所以指令會像下面這樣：
+客廳裡擺衣櫥好像怪怪的，我們來把它搬到自己房間。噢不過房間裡已經有一個衣櫃，這個就叫 `closet2` 好了。所以指令會像下面這樣：
 
 ```console
 mv living-room/closet bedroom/closet2
@@ -356,7 +356,7 @@ rmdir /s living-room
 
 **注意：**命令列內沒有「資源回收桶」（或叫「垃圾桶」）的概念，當刪除檔案時，就真的是刪除，完全、永遠、再也看不見了！所以在下這個指令之前，請千萬要好好想清楚喔！
 
-好啦，這次是真的結束了！下面是本教學裡面所有的指令。如果你之後需要複習，可以看這個表格，比較方便！
+好啦，這次是真的結束了！下面是本教學裡面所有的指令。如果你之後需要複習，直接看這個表格會比較方便。
 
 (((linux osx
 

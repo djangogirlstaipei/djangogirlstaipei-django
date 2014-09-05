@@ -1,6 +1,9 @@
 .language-switch {
     margin: auto 1em 1em auto;
 }
+p {
+    text-align: justify;
+}
 img {
     max-width: 100%;
 }
