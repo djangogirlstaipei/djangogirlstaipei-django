@@ -6,10 +6,10 @@
         float: right;
     }
 }
-p {
+.content p {
     text-align: justify;
 }
-img {
+.content img {
     max-width: 100%;
 }
 .content .alert {
