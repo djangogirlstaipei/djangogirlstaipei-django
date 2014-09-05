@@ -1,8 +1,8 @@
 {% extends 'boilerplate.html' %}
 
-{% load i18n staticfiles %}
+{% load i18n staticfiles base_tags %}
 
-{% block meta_image %}{% static 'base/img/logo-negative-square.jpg' %}{% endblock meta_image %}
+{% block meta_image %}{% absolute_static 'base/img/logo-negative-square.jpg' %}{% endblock meta_image %}
 
 {% block extra_css %}
 {{ block.super }}
