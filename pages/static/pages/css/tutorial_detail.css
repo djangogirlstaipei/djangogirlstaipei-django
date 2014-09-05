@@ -1,6 +1,10 @@
 .language-switch {
     margin: auto 1em 1em auto;
-    float: right;
+}
+@media(min-width: 992px) {  /* md or up */
+    .language-switch {
+        float: right;
+    }
 }
 p {
     text-align: justify;
