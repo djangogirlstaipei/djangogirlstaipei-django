@@ -12,6 +12,7 @@
 <meta name="description" content="{% block meta_description %}{% trans 'Django Girls Taipei is a one-day workshop about programming in Python and Django tailored for women.' %}{% endblock meta_description %}">
 <meta name="keywords" content="programming,web,python,django,html,tutorial,workshop,taipei,girls,women,females">
 <meta name="author" content="{% trans 'Django Girls Taipei' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
 <meta property="og:image" content="{% block meta_image %}{% endblock meta_image %}">
 {% endblock leading_head %}
 
