@@ -144,6 +144,15 @@ class TutorialRenderer(Renderer):
             str_format.format(name=name, code=next(it)) for name in it
         ]))
 
+    def table(self, header, body):
+        """Render table with Bootstrap .table class
+        """
+        str_format = (
+            '<table class="table">\n<thead>{thead}</thead>\n'
+            '<tbody>\n{tbody}</tbody>\n</table>\n'
+        )
+        return str_format.format(thead=header, tbody=body)
+
 
 def markdown_to_html(path, style=None, renderer_cls=None):
     """Renders given Markdown input to HTML.
