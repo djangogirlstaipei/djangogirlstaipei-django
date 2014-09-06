@@ -15,7 +15,7 @@ class CurrentOSMixin(object):
 
         os = self.request.session.get(SESSION_KEY_CURRENT_OS)
         if os not in allowed_os_keys:
-            os = 'windows'
+            os = OSForm.OS_CHOICES[0][0]
         os_form = OSForm(initial={'os': os})
         kwargs.update({'current_os': os, 'os_form': os_form})
         return super().get_context_data(**kwargs)
