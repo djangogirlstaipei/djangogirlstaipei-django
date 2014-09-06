@@ -1,22 +1,40 @@
 from django.http import JsonResponse
-from django.views.generic.edit import BaseFormView
-from base.utils import SESSION_KEY_CURRENT_OS
+from django.views.generic import FormView
+from base.utils import SESSION_KEY_CURRENT_OS, AjaxViewJSONEncoder
 from base.forms import OSForm
 
 
-class SetOSView(BaseFormView):
+class AjaxFormView(FormView):
+    """Ajax-ized form view that returns a response of given type.
 
-    form_class = OSForm
+    The default implementation returns a JSON response, and only allows POST,
+    returning 405 NOT ALLOWED for all other requests.
+    """
+
+    http_method_names = ['post']
+    response_class = JsonResponse
+    encoder = AjaxViewJSONEncoder
+
+    def form_valid(self, form):
+        context_data = self.get_context_data(data=form.cleaned_data)
+        return self.render_to_response(context_data)
 
     def form_invalid(self, form):
-        return self.render_to_response({'errors': form.errors}, status=400)
+        context_data = self.get_context_data(errors=form.errors)
+        return self.render_to_response(context_data, status=400)
+
+    def render_to_response(self, data, **response_kwargs):
+        """Overrides TemplateResponseMixin to provide a JSON response instead.
+        """
+        klass = self.response_class
+        return klass(data=data, encoder=self.encoder, **response_kwargs)
+
+
+class SetOSView(AjaxFormView):
+
+    form_class = OSForm
 
     def form_valid(self, form):
         os = form.cleaned_data['os']
         self.request.session[SESSION_KEY_CURRENT_OS] = os
-        return self.render_to_response({'current_os': os})
-
-    def render_to_response(self, context, **kwargs):
-        context.pop('form', None)   # From FormMixin.
-        context.pop('view', None)   # From ContextMixin.
-        return JsonResponse(context, **kwargs)
+        return super().form_valid(form)
