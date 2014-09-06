@@ -231,7 +231,7 @@ bedroom/closet
 ---osx
 /Users/uranusjr/bedroom/closet
 ---windows
-C:\Tzu-ping Chung\bedroom\closet
+C:\Users\Tzu-ping Chung\bedroom\closet
 ```
 
 ### 「外面」
@@ -243,7 +243,7 @@ C:\Tzu-ping Chung\bedroom\closet
 ---osx
 /Users/uranusjr/bedroom/closet
 ---windows
-C:\Tzu-ping Chung\bedroom\closet
+C:\Users\Tzu-ping Chung\bedroom\closet
 ```
 
 當我們輸入下面的指令：
