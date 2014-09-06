@@ -1,7 +1,7 @@
 django
-git+https://github.com/kennethreitz/dj-static.git
 cython
 dj-database-url
+dj-static
 gunicorn
 mistune
 psycopg2
