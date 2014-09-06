@@ -2,8 +2,10 @@ django
 git+https://github.com/kennethreitz/dj-static.git
 cython
 dj-database-url
-django-toolbelt
+gunicorn
 mistune
+psycopg2
 pygments
 pyyaml
 unicode-slugify
+waitress
