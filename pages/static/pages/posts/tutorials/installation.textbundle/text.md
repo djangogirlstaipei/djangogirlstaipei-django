@@ -75,7 +75,16 @@ title: "安裝開發環境"
 
 出現的這行字叫做 *prompt*。當它出現時（結尾會是一個 `>` 符號），代表終端機已經完成所有的工作，準備好等你輸入下一個指令。
 
-輸入 `python` 看看。你應該會看到類似下面的畫面：
+我們首先設定你的名字和 email：
+
+```console
+git config --global user.name "你的名字"
+git config --global user.email "你的 email"
+```
+
+不需要用真名，取個看得懂的代號就好。我們建議在名字只使用英文與數字，雖然如果你硬要用中文，通常也可以。Email 當然就是填可以用的信箱。
+
+接著輸入 `python` 看看。你應該會看到類似下面的畫面：
 
 ![Windows Python Prompt](assets/windows/python-prompt.png)
 
@@ -150,7 +159,16 @@ Run `brew help` to get started
 brew install git python3
 ```
 
-當 prompt 再度出現（畫面最後一行是以 `$` 結尾）時，輸入 `python3` 看看。你應該會看到類似下面的畫面：
+當 prompt 再度出現（畫面最後一行是以 `$` 結尾）時，在 Git 設定你的名字和 email：
+
+```console
+git config --global user.name "你的名字"
+git config --global user.email "你的 email"
+```
+
+不需要用真名，取個看得懂的代號就好。我們建議在名字只使用英文與數字，雖然如果你硬要用中文，通常也可以。Email 當然就是填可以用的信箱。
+
+接著輸入 `python3` 檢查 Python 是否成功安裝。你應該會看到類似下面的畫面：
 
 ![OS X Python Prompt](assets/osx/python-interactive.png)
 
@@ -186,7 +204,16 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git py
 
 ![Ubuntu 詢問密碼](assets/ubuntu/password-prompt.png)
 
-這應該會跑一陣子。完成之後，接著拷貝以下的指令至終端機執行：
+這應該會跑一陣子。完成之後，請在 Git 設定你的名字和 email：
+
+```console
+git config --global user.name "你的名字"
+git config --global user.email "你的 email"
+```
+
+不需要用真名，取個看得懂的代號就好。我們建議在名字只使用英文與數字，雖然如果你硬要用中文，通常也可以。Email 當然就是填可以用的信箱。
+
+接著拷貝以下的指令至終端機執行：
 
 ```bash
 wget -qO - http://d.pr/f/mbQy+ | sudo python3
@@ -194,7 +221,7 @@ wget -qO - http://d.pr/f/mbQy+ | sudo python3
 
 如果系統詢問你的密碼，同樣照著前面的方法輸入。等到出現 `All done!` 以及下一個 prompt 之後，輸入 `python3` 看看。你應該會看到類似下面的畫面：
 
-![Windows Python Prompt](assets/ubuntu/python-interactive.png)
+![Ubuntu Python Prompt](assets/ubuntu/python-interactive.png)
 
 代表安裝成功！這個視窗可以直接關掉沒關係。
 
