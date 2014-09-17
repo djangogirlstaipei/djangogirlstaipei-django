@@ -1,6 +1,7 @@
 ---
 title: "安裝開發環境"
 os_switch: true
+next: "setting-up-heroku"
 ---
 
 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
