@@ -1,7 +1,7 @@
 ---
 title: "安裝開發環境"
 os_switch: true
-next: "setting-up-heroku"
+next: "tutorials/setting-up-heroku"
 ---
 
 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
@@ -228,5 +228,3 @@ wget -qO - http://d.pr/f/mbQy+ | sudo python3
 代表安裝成功！這個視窗可以直接關掉沒關係。
 
 )))
-
-回家作業就到這裡囉，請和教練報告你的進度，接著就期待當天的活動吧！

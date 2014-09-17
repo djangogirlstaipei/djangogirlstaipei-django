@@ -1,6 +1,7 @@
 ---
 title: "Heroku 註冊與設定"
 os_switch: true
+previous: "tutorials/installation"
 ---
 
 當你的網站完成後，我們必須找個公開的地方來放它，才能讓它被全世界(!)看到。不過在那之前，我們必須先設定一下。在這個教學中，我們會帶領你設定 **[Heroku](http://heroku.com/)** 這個專門讓你放置網站的服務。接著在你完成網站後，我們會教你怎麼使用它。

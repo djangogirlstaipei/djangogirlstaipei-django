@@ -35,6 +35,26 @@
 
 {{ content|safe }}
 
+<div class="prev-next">
+  {% if meta.previous %}
+  <div class="pull-left">
+    <a href="{% url 'pages:page' meta.previous %}">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      上一篇
+    </a>
+  </div>
+  {% endif %}
+
+  {% if meta.next %}
+  <div class="pull-right">
+    <a href="{% url 'pages:page' meta.next %}">
+      下一篇
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+  {% endif %}
+</div>
+
 {% endblock content %}
 
 
