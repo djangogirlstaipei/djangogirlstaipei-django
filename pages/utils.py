@@ -1,6 +1,7 @@
 import os
 import copy
 import collections
+import json
 import re
 import mistune
 import yaml
@@ -191,3 +192,9 @@ def markdown_to_html(path, style=None, renderer_cls=None):
             text = text[offset:]
     html = md.render(text)
     return html, front_matter, formatter.get_style_defs('.highlight > pre')
+
+
+def get_posts_data(path):
+    with open(finders.find(path)) as f:
+        data = json.load(f)
+    return data

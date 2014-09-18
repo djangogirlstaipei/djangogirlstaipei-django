@@ -2,15 +2,11 @@ import os
 from django.http import Http404
 from django.views.generic import TemplateView, RedirectView
 from base.views import CurrentOSMixin
-from .utils import markdown_to_html, TutorialRenderer
+from .utils import get_posts_data, markdown_to_html, TutorialRenderer
 
 
 # class HomeView(TemplateView):
 #     template_name = 'pages/home.html'
-
-
-# class TutorialListView(TemplateView):
-#     template_name = 'pages/tutorial_list.html'
 
 
 class HomeView(RedirectView):
@@ -18,9 +14,14 @@ class HomeView(RedirectView):
     url = 'http://djangogirls.org/taipei'
 
 
-class TutorialListView(RedirectView):
-    permanent = False
-    url = 'http://djangogirls.org/taipei'
+class TutorialListView(TemplateView):
+
+    template_name = 'pages/tutorial_list.html'
+
+    def get_context_data(self, **kwargs):
+        data = get_posts_data(os.path.join('pages', 'posts', 'info.json'))
+        kwargs['tracks'] = data['tutorials']['tracks']
+        return super().get_context_data(**kwargs)
 
 
 class MarkdownPageView(TemplateView):

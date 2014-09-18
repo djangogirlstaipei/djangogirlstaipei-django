@@ -21,6 +21,18 @@
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% url 'pages:home' %}"><span class="logo"></span> <span>Taipei</span></a>
+      <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+        <span class="sr-only">{% trans 'Menu' %}</span>
+        {% for i in '123' %}
+        <span class="icon-bar"></span>
+        {% endfor %}
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'pages:tutorial_list' %}">教學手冊</a></li>
+      </ul>
     </div>
   </div>
 </nav>

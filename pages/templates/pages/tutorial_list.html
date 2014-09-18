@@ -1,7 +1,33 @@
 {% extends 'base/base.html' %}
 
+{% load staticfiles %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'pages/css/tutorial_list.css' %}">
+{% endblock extra_css %}
+
+
 {% block content %}
 
 <h1>Django Girls 教學</h1>
+
+<p>這是我們為想學習 Django 的女孩們量身打造的中文教學。想了解更多嗎？也可以看看 Django Girls 的<a href="http://tutorial.djangogirls.org">原版教學</a>！</p>
+
+{% for track in tracks %}
+<div class="tutorial-track{% if track.name %} {{ track.name }}{% endif %}">
+  <h2 class="tutorial-track-title">{{ track.title }}</h2>
+  <p>{{ track.description }}</p>
+
+  {% for post in track.posts %}
+  <a href="{% url 'pages:page' post.target %}">
+    <div class="tutorial-item">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.description }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endfor %}
 
 {% endblock content %}

@@ -1,0 +1,41 @@
+body {
+    counter-reset: tutorial-item;
+    font-size: 15px;
+}
+h2 {
+    padding-bottom: 0.25em;
+    border-bottom: solid 1px #bbb;
+}
+h3 {
+    font-weight: normal;
+}
+.tutorial-track {
+    margin: 5em auto 8em auto;
+}
+.tutorial-track a {
+    color: #333;
+}
+.tutorial-track a:hover {
+    color: #666;
+    text-decoration: none;
+}
+.tutorial-item {
+    margin: 3em auto 3em -1em;
+}
+.tutorial-item:before {
+    counter-increment: tutorial-item;
+    content: counter(tutorial-item);
+    text-align: center;
+    margin: 0 1ex 0 -2em;
+    padding: 8px 0 0 0;
+    color: #bbb;
+    float: left;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+}
+.tutorial-item:hover:before {
+    background-color: rgb(255, 148, 0);
+    color: #fff;
+    border-radius: 60px;
+}

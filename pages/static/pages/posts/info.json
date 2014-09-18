@@ -1,0 +1,23 @@
+{
+    "tutorials": {
+        "tracks": [
+            {
+                "name": "homework",
+                "title": "回家作業",
+                "description": "在活動開始之前，先做好準備，可以讓你在課程學到更多東西！",
+                "posts": [
+                    {
+                        "title": "安裝開發環境",
+                        "description": "工欲善其事，必先利其器。把你的電腦設定好，才能在上面順利建立你的第一個網站！",
+                        "target": "tutorials/installation"
+                    },
+                    {
+                        "title": "Heroku 註冊與設定",
+                        "description": "網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。",
+                        "target": "tutorials/setting-up-heroku"
+                    }
+                ]
+            }
+        ]
+    }
+}
