@@ -9,7 +9,7 @@ previous: "tutorials/installation"
 
 ## 註冊 Heroku 帳號
 
-首先我們要註冊一個帳號。前往 <https://id.heroku.com/signup/www-header>，輸入你的 Email 信箱，然後點選「Sign Up」按鈕。
+首先我們要註冊一個帳號。前往 <https://id.heroku.com/signup>，輸入你的 Email 信箱，然後點選「Sign Up」按鈕。
 
 稍等幾分鐘後，去你輸入的信箱收信。你應該會收到一封像這樣的 Email：
 
@@ -19,7 +19,7 @@ previous: "tutorials/installation"
 
 > 如果你把下面的框框打勾，Heroku 就會寄一些活動廣告給你。勾不勾都可以。
 
-按下 Save 後等一陣子，直到「A moment please」消失後，就代表註冊完成！
+按下 Save 後等一陣子，直到 **A moment please** 的字樣消失後，就代表註冊完成！
 
 
 ## 安裝 Heroku 工具
