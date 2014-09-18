@@ -18,12 +18,3 @@
 .content .alert .close {
     margin-left: 8px;
 }
-.prev-next {
-    margin-top: 5em;
-    padding-top: 1em;
-    border-top: 1.5px solid #ccc;
-}
-.prev-next a {
-    font-size: 18px;
-    font-weight: 600;
-}
