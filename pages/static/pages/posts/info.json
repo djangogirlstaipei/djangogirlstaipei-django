@@ -17,23 +17,6 @@
                         "target": "tutorials/setting-up-heroku"
                     }
                 ]
-            },
-            {
-                "name": "lead",
-                "title": "前導課程",
-                "description": "為了使用 Django，我們必須先學習一些寫 Django 程式時用到的工具。來看看它們！",
-                "posts": [
-                    {
-                        "title": "命令列",
-                        "description": "寫程式與平常操作電腦時最大的不同，就是會常常使用「命令列」。來看看命令列的用途究竟是什麼！",
-                        "target": "tutorials/command-line"
-                    },
-                    {
-                        "title": "用 Git 進行版本控制",
-                        "description": "版本控制？這是什麼東西？其實你常常都會用到，真的！讀讀這篇，你就知道為什麼。:)",
-                        "target": "tutorials/version-control-with-git"
-                    }
-                ]
             }
         ]
     }
