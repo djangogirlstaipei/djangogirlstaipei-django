@@ -21,7 +21,7 @@ Django Girls 教學手冊 | {{ block.super }}
 <p>這是我們為想學習 Django 的女孩們量身打造的中文教學。想了解更多嗎？也可以看看 Django Girls 的<a href="http://tutorial.djangogirls.org">原版教學</a>！</p>
 
 {% for track in tracks %}
-<div class="tutorial-track{% if track.name %} {{ track.name }}{% endif %}">
+<div class="tutorial-track{% if track.name %} track-{{ track.name }}{% endif %}">
   <h2 class="tutorial-track-title">{{ track.title }}</h2>
   <p>{{ track.description }}</p>
 
