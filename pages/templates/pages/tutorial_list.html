@@ -2,15 +2,21 @@
 
 {% load staticfiles %}
 
+{% block meta_description %}這是我們為想學習 Django 的女孩們量身打造的中文教學。{% endblock meta_description %}
+
 {% block extra_css %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'pages/css/tutorial_list.css' %}">
 {% endblock extra_css %}
 
+{% block title %}
+Django Girls 教學手冊 | {{ block.super }}
+{% endblock title %}
+
 
 {% block content %}
 
-<h1>Django Girls 教學</h1>
+<h1>Django Girls 教學手冊</h1>
 
 <p>這是我們為想學習 Django 的女孩們量身打造的中文教學。想了解更多嗎？也可以看看 Django Girls 的<a href="http://tutorial.djangogirls.org">原版教學</a>！</p>
 
