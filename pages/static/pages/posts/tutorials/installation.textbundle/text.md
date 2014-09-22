@@ -114,7 +114,7 @@ git config --global user.email "你的 email"
 拷貝下面的指令，貼到終端機視窗內，並按下 Return 執行它：
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 如果畫面停在這個狀態，請再按一次 Return：
