@@ -19,6 +19,9 @@ FRONT_MATTER_PATTERN = re.compile(r'^---\n(.*?\n)---', re.DOTALL)
 
 class BlockGrammar(mistune.BlockGrammar):
 
+    # Fix trailing newline bug in Mistune.
+    block_code = re.compile(r'^( {4}[^\n]+\n)+')
+
     os_switch = re.compile(
         r'^ *\({3} *([\w _-]+) *\n'     # ((( class names
         r'([\s\S]+?)\s*'
