@@ -1,4 +1,6 @@
-# Introduction to Python
+---
+title: "Introduction to Python"
+---
 
 你已經把 Python 裝好了，接下來讓我們來開始寫點程式吧！
 
