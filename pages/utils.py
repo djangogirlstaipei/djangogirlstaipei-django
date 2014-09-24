@@ -182,6 +182,7 @@ def markdown_to_html(path, style=None, renderer_cls=None):
     renderer = renderer_cls(formatter=formatter, bundlepath=path)
     md = Markdown(renderer=renderer)
     fm_match = FRONT_MATTER_PATTERN.match(text)
+    front_matter = {}
     if fm_match:
         try:
             front_matter = yaml.load(fm_match.group(1))
