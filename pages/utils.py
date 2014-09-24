@@ -187,7 +187,7 @@ def markdown_to_html(path, style=None, renderer_cls=None):
         try:
             front_matter = yaml.load(fm_match.group(1))
         except yaml.YAMLError:
-            front_matter = {}
+            pass
         else:
             offset = fm_match.end(0) + 1
             text = text[offset:]
