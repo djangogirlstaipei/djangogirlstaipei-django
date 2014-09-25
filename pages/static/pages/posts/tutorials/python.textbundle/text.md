@@ -410,7 +410,7 @@ Boolean 當然也可以存在變數當中：
     ... else:
     ...     print('Hey anonymous!')
     ...
-    Django!
+    Hey Django!
 
 試著打打看上面的程式，改變 name 的內容看看會有什麼不同的結果吧。
 
