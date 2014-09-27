@@ -32,6 +32,16 @@
                         "title": "用 Git 進行版本控制",
                         "description": "版本控制？這是什麼東西？其實你常常都會用到，真的！讀讀這篇，你就知道為什麼。:)",
                         "target": "tutorials/version-control-with-git"
+                    },
+                    {
+                        "title": "Python 入門",
+                        "description": "你已經把 Python 裝好了，接下來讓我們來開始寫點程式吧！",
+                        "target": "tutorials/python"
+                    },
+                    {
+                        "title": "HTML",
+                        "description": "HTML 是網頁的基礎。它不是程式語言，但和有著一樣的基本結構跟目的，就是要用來描述內容。",
+                        "target": "tutorials/html"
                     }
                 ]
             }
