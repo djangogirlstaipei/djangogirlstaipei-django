@@ -44,6 +44,18 @@
                         "target": "tutorials/html"
                     }
                 ]
+            },
+            {
+                "name": "django",
+                "title": "Django 教學",
+                "description": "讓我們應用前面所學到的知識，一同來學習 Django，建立屬於你自己的網站！",
+                "posts": [
+                    {
+                        "title": "Django 學習指南",
+                        "description": "透過這份學習指南，你會學習到 Django 的程式架構，從創建一個專案，到最後將網站發佈到網路上，建立一個屬於自己的旅遊日記。",
+                        "target": "http://flywindy.gitbooks.io/django-girls-taipei-tutorial/"
+                    }
+                ]
             }
         ]
     }

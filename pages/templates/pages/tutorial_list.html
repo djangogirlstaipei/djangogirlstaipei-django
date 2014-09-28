@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% load staticfiles %}
+{% load staticfiles pages_tags %}
 
 {% block meta_description %}這是我們為想學習 Django 的女孩們量身打造的中文教學。{% endblock meta_description %}
 
@@ -26,7 +26,7 @@ Django Girls 教學手冊 | {{ block.super }}
   <p>{{ track.description }}</p>
 
   {% for post in track.posts %}
-  <a href="{% url 'pages:page' post.target %}">
+  <a href="{% page_url post.target %}">
     <div class="tutorial-item">
       <h3>{{ post.title }}</h3>
       <p>{{ post.description }}</p>
