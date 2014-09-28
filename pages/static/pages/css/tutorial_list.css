@@ -20,13 +20,13 @@ h3 {
     text-decoration: none;
 }
 .tutorial-item {
-    margin: 3em auto 3em -1em;
+    margin: 3em auto 3em 0;
 }
 .tutorial-item:before {
     counter-increment: tutorial-item;
     content: counter(tutorial-item);
     text-align: center;
-    margin: 0 1ex 0 -2em;
+    margin: 0 1ex 0 -3em;
     padding: 8px 0 0 0;
     color: #bbb;
     float: left;
