@@ -1,0 +1,17 @@
+language: "python"
+
+python:
+    - "3.4"
+
+env:
+    - "DJANGO_SETTINGS_MODULE=__.settings.staging"
+
+install:
+    - "pip install -q -r requirements.txt"
+
+script:
+    - "python manage.py test"
+
+deploy:
+    provider: "heroku"
+    api_key: "77cd3712-228f-4601-aca6-6f8625f6d695"
