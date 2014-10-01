@@ -7,7 +7,7 @@ env:
     - "DJANGO_SETTINGS_MODULE=__.settings.staging"
 
 install:
-    - "pip install -q -r requirements.txt"
+    - "pip install -q -r requirements-staging.txt"
 
 script:
     - "python manage.py test"

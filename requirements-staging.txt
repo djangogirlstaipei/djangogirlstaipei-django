@@ -1,0 +1,5 @@
+django
+mistune
+pygments
+pyyaml
+unicode-slugify
