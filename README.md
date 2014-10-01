@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/djangogirlstaipei/djangogirlstaipei.svg?branch=master)](https://travis-ci.org/djangogirlstaipei/djangogirlstaipei)
+
 # Django Girls Taipei
 
 Supplemental materials for Django Girls Taipei events. Used with [DjangoGirls.org/taipei](http://djangogirls.org/taipei). :)
