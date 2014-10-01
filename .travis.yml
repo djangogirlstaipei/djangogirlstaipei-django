@@ -14,4 +14,6 @@ script:
 
 deploy:
     provider: "heroku"
-    api_key: "77cd3712-228f-4601-aca6-6f8625f6d695"
+    strategy: "git"
+    api_key:
+        secure: "qaivMR6mqsSuHf+Br2mTlH4B93P8ns3v0I+XhGfNTVoucEu/Fscg3rkYjXFD+JeZQa2HHC2slqyB5OAkUZJDl8/qLOd5XTrBq3c72/AGMkv8lKvzmcefa+ZwGWa7MlXvwgsYycsbvIPGvscGSzjXyVMttRV8eyqn+aPQmRz3cPc="
