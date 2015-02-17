@@ -5,6 +5,9 @@
 
 {% block extra_css %}
 {{ block.super }}
+{% if meta.math %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+{% endif %}
 <link rel="stylesheet" href="{% static 'pages/css/tutorial_detail.css' %}">
 {% endblock extra_css %}
 
@@ -40,6 +43,9 @@
 
 {% block extra_js %}
 {{ block.super }}
+{% if meta.math %}
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
+{% endif %}
 <script type="text/javascript">var DEFAULT_OS = '{{ current_os }}';</script>
 <script type="text/javascript" src="{% static 'pages/js/tutorial_detail.js' %}"></script>
 {% endblock extra_js %}

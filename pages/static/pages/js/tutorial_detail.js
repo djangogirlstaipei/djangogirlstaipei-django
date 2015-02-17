@@ -1,4 +1,8 @@
-(function ($, defaultOS) {
+(function ($, katex, defaultOS) {
+
+$('span.math').each(function () {
+  katex.render(this.textContent, this);
+});
 
 var switchOS = function (name) {
   // Show only text code blocks for current OS.
@@ -22,4 +26,4 @@ $('#id_os').change(function (e) {
   $.post(form.attr('action'), form.serialize());
 });
 
-})(jQuery, DEFAULT_OS);
+})(jQuery, katex, DEFAULT_OS);

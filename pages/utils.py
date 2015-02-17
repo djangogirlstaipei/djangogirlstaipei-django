@@ -31,13 +31,9 @@ class BlockGrammar(mistune.BlockGrammar):
 
 class BlockLexer(mistune.BlockLexer):
 
-    default_features = copy.copy(mistune.BlockLexer.default_features)
-    default_features.insert(5, 'os_switch')
-
-    def __init__(self, rules=None, **kwargs):
-        if rules is None:
-            rules = BlockGrammar()
-        super().__init__(rules, **kwargs)
+    grammar_class = BlockGrammar
+    default_rules = copy.copy(mistune.BlockLexer.default_rules)
+    default_rules.insert(5, 'os_switch')
 
     def parse_os_switch(self, m):
         self.tokens.append({
@@ -50,11 +46,33 @@ class BlockLexer(mistune.BlockLexer):
         })
 
 
+class InlineGrammar(mistune.InlineGrammar):
+
+    # Math inline. Two dollars (not one). We don't implement block math yet.
+    math = re.compile(r'^(\$+)\s*(.*?[^`])\s*\1(?!\$)')
+
+    # Override plain text pattern to add the dollar sign as a markup char.
+    text = re.compile(r'^[\s\S]+?(?=[\\<!\[_*`~\$]|https?://| {2,}\n|$)')
+
+
+class InlineLexer(mistune.InlineLexer):
+
+    grammar_class = InlineGrammar
+    default_rules = copy.copy(mistune.InlineLexer.default_rules)
+    default_rules.insert(8, 'math')
+
+    def output_math(self, m):
+        text = m.group(2)
+        return self.renderer.inline_math(text)
+
+
 class Markdown(mistune.Markdown):
 
     def __init__(self, renderer=None, inline=None, block=None, **kwargs):
         if block is None:
-            block = BlockLexer()
+            block = BlockLexer
+        if inline is None:
+            inline = InlineLexer
         super().__init__(renderer, inline, block, **kwargs)
 
     def parse_os_switch_open(self):
@@ -104,6 +122,9 @@ class Renderer(mistune.Renderer):
         """
         src = self._resolve_asset_path(src)
         return super().image(src, title, text)
+
+    def inline_math(self, src):
+        return '<span class="math">{src}</span>'.format(src=src)
 
     def _resolve_asset_path(self, path):
         if path.startswith('javascript:'):  # Taken from mistune.

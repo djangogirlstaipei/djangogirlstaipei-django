@@ -7,3 +7,6 @@ pre {
     word-wrap: normal;
     white-space: pre;
 }
+.katex {
+    font-size: 12px;
+}
