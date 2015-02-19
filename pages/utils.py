@@ -75,10 +75,10 @@ class Markdown(mistune.Markdown):
             inline = InlineLexer
         super().__init__(renderer, inline, block, **kwargs)
 
-    def parse_os_switch_open(self):
+    def output_os_switch_open(self):
         return self.renderer.os_switch_open(os=self.token['os'])
 
-    def parse_os_switch_close(self):
+    def output_os_switch_close(self):
         return self.renderer.os_switch_close()
 
 
