@@ -9,6 +9,8 @@
 <link href="{% static 'base/img/favicon.ico' %}" rel="shortcut icon">
 <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
+
 {% endblock extra_css %}
 
 
@@ -56,4 +58,5 @@
 
 {% block extra_js %}
 {% include 'base/includes/analytics.html' with unique_id='UA-54356331-2' %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
 {% endblock extra_js %}
