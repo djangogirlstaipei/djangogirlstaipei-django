@@ -70,6 +70,8 @@ os_switch: true
 
 當你輸入兩個路徑後，程式會結束。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
 
+> 如果你使用 Windows Vista 或 XP，上述安裝可能會出現錯誤。我們強烈建議立即升級至 Windows 7 或更新版本。
+
 ![Django Environment 桌面捷徑](assets/windows/django-desktop-icon.png)
 
 雙擊打開它。你應該會看到這樣的畫面：
