@@ -62,11 +62,13 @@ os_switch: true
 
 ### 建立開發用捷徑
 
-接著請下載[這個檔案](http://d.pr/f/RS9L)，然後按兩下執行它。還記得剛剛我們在記事本寫的那兩行嗎？請依序把它們拷貝起來，在出現的黑色視窗裡**按右鍵選擇貼上**，然後按 Enter。結果應該會像這樣：
+接著請下載[這個檔案](http://d.pr/f/ZXEz)，然後按兩下執行它。還記得剛剛我們在記事本寫的那兩行嗎？請依序把它們拷貝起來，在出現的視窗裡依序**按右鍵選擇貼上**，然後按「確定」。看起來應該會像這樣：
 
-![Create Shell.bat 操作過程](assets/windows/create-shell.png)
+![create-env.vbs 操作過程：Git 路徑](assets/windows/create-env-git-path-prompt.png)
 
-當你按下第二次 Enter 後，視窗會關閉。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
+![create-env.vbs 操作過程：Python 路徑](assets/windows/create-env-python-path-prompt.png)
+
+當你輸入兩個路徑後，程式會結束。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
 
 ![Django Environment 桌面捷徑](assets/windows/django-desktop-icon.png)
 
