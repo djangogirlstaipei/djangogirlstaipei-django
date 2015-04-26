@@ -1,8 +1,10 @@
 (function ($, katex, defaultOS) {
 
-$('span.math').each(function () {
-  katex.render(this.textContent, this);
-});
+if (katex) {
+  $('span.math').each(function () {
+    katex.render(this.textContent, this);
+  });
+}
 
 var switchOS = function (name) {
   // Show only text code blocks for current OS.
