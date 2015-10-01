@@ -12,8 +12,9 @@ class CurrentOSMixin(object):
         # Zip the 2-tuple into a [keys, values] generator, and use next() to
         # get its first item (i.e. keys).
         allowed_os_keys = next(zip(*self.allowed_oses))
-
-        os = self.request.session.get(SESSION_KEY_CURRENT_OS)
+        os = self.request.GET.get('os')
+        if not os:
+            os = self.request.session.get(SESSION_KEY_CURRENT_OS)
         if os not in allowed_os_keys:
             os = OSForm.OS_CHOICES[0][0]
         os_form = OSForm(initial={'os': os})

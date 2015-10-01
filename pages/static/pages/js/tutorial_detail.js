@@ -1,10 +1,23 @@
 (function ($, katex, defaultOS) {
 
+'use strict';
+
 if (katex) {
   $('span.math').each(function () {
     katex.render(this.textContent, this);
   });
 }
+
+var parseParam = function (query) {
+  var obj = {};
+  if (!query)
+    return obj;
+  $.each(query.split('&'), function (i, v) {
+    var pair = v.split('=');
+    obj[pair[0]] = pair[1];
+  });
+  return obj;
+};
 
 var switchOS = function (name) {
   // Show only text code blocks for current OS.
@@ -14,6 +27,20 @@ var switchOS = function (name) {
   $('pre.os.default').each(function () {
     $(this)[$(this).siblings('pre.os.' + name).size() ? 'hide' : 'show']();
   });
+
+  // Use the history API to add the OS name to the query string.
+  if (window.history && window.history.state && window.history.replaceState) {
+    var pathParts = document.location.href.split('?');
+    var params = parseParam(pathParts[1]);
+    if (params.os !== name) {
+      params.os = name;
+      window.history.replaceState(
+        window.history.state,
+        document.title,
+        pathParts[0] + '?' + $.param(params)
+      );
+    }
+  }
 };
 
 switchOS(defaultOS);
