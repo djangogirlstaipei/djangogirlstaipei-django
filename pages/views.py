@@ -35,7 +35,7 @@ class MarkdownPageView(TemplateView):
         :param str style: Name of Pygment style to use for syntax highlighting.
             If an invalid name is provided, the default style is used.
         """
-        comps = os.path.join(self.kwargs['path'].split('/'))
+        comps = self.kwargs['path'].split('/')
         bundlepath = os.path.join('pages', 'posts', *comps) + '.textbundle'
         results = markdown_to_html(bundlepath, style, self.renderer_class)
         if results is None:

@@ -4,7 +4,6 @@ from django.test import TestCase
 from django.test import Client
 
 from .utils import get_posts_data
-from .templatetags.pages_tags import page_url
 
 
 class BasicTestCase(TestCase):
@@ -45,5 +44,6 @@ class BasicTestCase(TestCase):
             for post in track['posts']:
                 if post['target'].startswith('//') or '://' in post['target']:
                     continue
-                response = self.client.get(page_url(post['target']))
+                url = '/{}/'.format(post['target'])
+                response = self.client.get(url)
                 self.assertContains(response, post['title'])
