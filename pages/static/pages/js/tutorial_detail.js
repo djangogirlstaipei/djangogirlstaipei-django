@@ -29,7 +29,7 @@ var switchOS = function (name) {
   });
 
   // Use the history API to add the OS name to the query string.
-  if (window.history && window.history.state && window.history.replaceState) {
+  if (window.history && window.history.replaceState) {
     var pathParts = document.location.href.split('?');
     var params = parseParam(pathParts[1]);
     if (params.os !== name) {
