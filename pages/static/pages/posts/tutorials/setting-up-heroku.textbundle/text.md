@@ -52,7 +52,7 @@ os_switch: true
 打開終端機，輸入以下指令安裝 Heroku 工具程式：
 
 ```console
-sudo apt-get install heroku-toolbelt
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ---osx
 brew install heroku-toolbelt
 ```
