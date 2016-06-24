@@ -6,7 +6,7 @@ os_switch: true
 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
 
 1. 安裝 Git。
-2. 安裝 Python 3.4。
+2. 安裝 Python 3.5。
 
 ((( windows
 
@@ -30,33 +30,35 @@ os_switch: true
 
 ![將 Git 安裝根目錄記錄於記事本](assets/windows/git-record-path.png)
 
-接著回到安裝程式，繼續按下一步，直到它開始安裝。直到出現這個畫面，就代表安裝完成。
+接著回到安裝程式，繼續按下一步，直到它開始安裝。當出現這個畫面時，就代表安裝完成。
 
 ![Git 安裝完成](assets/windows/git-installation-done.png)
 
-先別急著按 Finish！中間有個「View ReleaseNotes.rtf」先取消打勾，再按 Finish 關掉視窗。如果你忘了取消，就會再另外跳一個視窗出來——也別緊張，關掉它就好了，不會怎樣。
+先別急著按 Finish！中間有個「View Release Notes」先取消打勾，再按 Finish 關掉視窗。如果你忘了取消，就會再另外跳一個視窗出來——也別緊張，關掉它就好了，不會怎樣。
 
 ### 安裝 Python
 
-首先[下載 Python 3.4.1](http://www.python.org/ftp/python/3.4.1/python-3.4.1.msi)。雙擊下載後的安裝檔，你應該會看到這個畫面
+首先[下載 Python 3.5.1](https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe)。下載後雙擊安裝檔。如果你看到確認執行應用程式的視窗：
+
+![Python 確認執行視窗](assets/windows/python-run-alert.png)
+
+請選擇「執行」。
+
+在開始安裝的初始畫面中：
 
 ![Python 安裝初始畫面](assets/windows/python-installation-start.png)
 
-請按下一步。現在應該會出現這個畫面：
+請確認「Install launcher for all users」**不要**打勾。接著選擇「Customize installation」，按下一步，直到出現下面的畫面：
 
 ![Python 安裝根目錄畫面](assets/windows/python-installation-root.png)
 
-請把最畫面文字框內的文字同樣記到記事本裡。現在你的記事本應該會長這樣：
+把「Customize install location」下面文字框內的文字同樣記到記事本裡。現在你的記事本應該會長這樣：
 
 ![將 Python 安裝根目錄記錄於記事本](assets/windows/python-record-path.png)
 
-回到安裝程式，再按一次下一步。應該會出現這個畫面：
+回到安裝程式，再按一次下一步，就會開始安裝。稍等一會兒，直到出現這個畫面
 
-![Python 3.4.1 安裝元件畫面](assets/windows/python-installation-customize.png)
-
-確認**只有最後一個選項**打叉，按下一步開始安裝。安裝程式可能會要求管理員權限，請在提示視窗中確認。稍等一會兒，直到出現這個畫面
-
-![Python 3.4.1 安裝完成畫面](assets/windows/python-installation-done.png)
+![Python 安裝完成畫面](assets/windows/python-installation-done.png)
 
 就代表安裝完成了！
 
@@ -70,7 +72,7 @@ os_switch: true
 
 當你輸入兩個路徑後，程式會結束。然後你的桌面應該會出現一個叫做「Django Environment」的捷徑。
 
-> 如果你使用 Windows Vista 或 XP，上述安裝可能會出現錯誤。我們強烈建議立即升級至 Windows 7 或更新版本。
+> 如果你使用 Windows Vista 或 XP，上述安裝可能會出現錯誤。我們強烈建議立即升級至 Windows 10。
 
 ![Django Environment 桌面捷徑](assets/windows/django-desktop-icon.png)
 
