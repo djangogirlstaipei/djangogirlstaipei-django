@@ -188,7 +188,7 @@ git config --global user.email "你的 email"
 
 ((( linux
 
-這裡以 Ubuntu 14.04 (Trusty Tahr) 為例。如果你用其他的版本，請洽教練～
+這裡以 Ubuntu 16.04 (Xenial Xerus) 為例。如果你用其他的版本，請洽教練～
 
 ### 安裝 Git 與 Python 3
 
@@ -207,7 +207,7 @@ git config --global user.email "你的 email"
 拷貝以下的指令，貼到終端機中（用 ctrl-shift-v 或者右鍵選擇貼上），並按下 Enter 以執行：
 
 ```bash
-sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install git python3 python3-pip -y
+sudo apt update -y && sudo apt upgrade -y && sudo apt install git python3 python3-venv -y
 ```
 
 如果出現類似下面的畫面（顯示 `[sudo] password for XXX:`，`XXX` 會是你的使用者名稱），請輸入你的管理者密碼。當你輸入時密碼並不會顯示在畫面上（也不會出現 `*****` 這樣！），請不要緊張，放心輸入後按下 Enter 即可：
@@ -223,13 +223,7 @@ git config --global user.email "你的 email"
 
 不需要用真名，取個看得懂的代號就好。我們建議在名字只使用英文與數字，雖然如果你硬要用中文，通常也可以。Email 當然就是填可以用的信箱。
 
-接著拷貝以下的指令至終端機執行：
-
-```bash
-wget -qO - http://d.pr/f/mbQy+ | sudo python3
-```
-
-如果系統詢問你的密碼，同樣照著前面的方法輸入。等到出現 `All done!` 以及下一個 prompt 之後，輸入 `python3` 看看。你應該會看到類似下面的畫面：
+接著輸入 `python3` 看看。你應該會看到類似下面的畫面：
 
 ![Ubuntu Python Prompt](assets/ubuntu/python-interactive.png)
 
