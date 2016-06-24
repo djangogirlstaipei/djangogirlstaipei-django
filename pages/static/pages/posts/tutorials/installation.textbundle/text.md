@@ -120,7 +120,7 @@ git config --global user.email "你的 email"
 拷貝下面的指令，貼到終端機視窗內，並按下 Return 執行它：
 
 ```bash
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 如果畫面停在這個狀態，請再按一次 Return：
@@ -135,7 +135,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 ![OS X 安裝命令列開發者工具](assets/osx/command-line-developer-tools-start.png)
 
-在跳出的「命令列工具許可協議」視窗選擇同意，就會開始安裝。完成之後應該會跳出這個畫面：
+在跳出的「命令列工具許可協議」視窗選擇同意，就會開始安裝。完成之後如果跳出這個畫面（如果沒有就跳過這步）：
 
 ![OS X 命令列開發者工具安裝完成畫面](assets/osx/command-line-developer-tools-done.png)
 
@@ -150,8 +150,11 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 ==> Installation successful!
 ==> Next steps
-Run `brew doctor` before you install anything
 Run `brew help` to get started
+Further documentation: https://git.io/brew-docs
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
 ```
 
 便代表安裝完成。現在你的終端機視窗應該類似下面這樣，最後一行是以 `$` 結尾：
