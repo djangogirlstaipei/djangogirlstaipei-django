@@ -54,7 +54,7 @@ os_switch: true
 ```console
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ---osx
-brew install heroku-toolbelt
+brew install heroku
 ```
 
 )))
