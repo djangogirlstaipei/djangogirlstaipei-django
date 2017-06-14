@@ -35,7 +35,7 @@ h3 {
     height: 60px;
 }
 .tutorial-item:hover:before {
-    background-color: rgb(255, 148, 0);
+    background-color: #27C5C0;
     color: #fff;
     border-radius: 60px;
 }

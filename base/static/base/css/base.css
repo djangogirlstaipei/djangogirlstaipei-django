@@ -6,18 +6,18 @@ p {
     line-height: 1.6em;
 }
 a {
-    color: #7F7759;
+    color: #476666;
 }
 blockquote {
     font-size: 90%;
     color: #777;
 }
 a:hover, a:focus, a:active {
-    color: #7F6F33;
+    color: #286665;
 }
 .navbar-default {
-    background: rgb(255, 148, 0);
-    border-color: rgb(255, 148, 0);
+    background: #27C5C0;
+    border-color: #27C5C0;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     color: transparent;
@@ -48,18 +48,18 @@ a:hover, a:focus, a:active {
 
 /* Custom styles */
 footer {
-    background: rgb(255, 148, 0);
+    background: #27C5C0;
     margin-top: 50px;
     padding: 1em;
-    color: #eee;
+    color: #FFF;
     text-align: center;
 }
 footer p {
     margin: 0;
 }
 footer a {
-    color: #FFDE66;
+    color: #D7FFF7;
 }
 footer a:hover, footer a:focus, footer a:active {
-    color: #FFEEB2;
+    color: #FFF;
 }
