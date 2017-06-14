@@ -3,7 +3,9 @@ title: "用 Heroku 部署網站"
 os_switch: true
 ---
 
-當你的網站完成後，我們必須找個公開的地方來放它，才能讓它被全世界(!)看到。不過在那之前，我們必須先設定一下。在這個教學中，我們會帶領你設定、使用 **[Heroku](http://heroku.com/)** 這個專門讓你放置網站的服務。
+**[Heroku](http://heroku.com/)** 是一個專門讓人放置網站的服務。它和我們前面使用的 PythonAnywhere 不一樣，不是直接給你一個 Linux 伺服器，讓你自己設定，而是提供一組與作業系統無關的特定介面。這種服務常被稱作 PaaS（platform as a service，平台即服務），與 PythonAnywhere 的 Iaas（intrastructure as a service，設施即服務）相對。這個章節會帶你註冊、設定一個 Heroku 帳號，並將你的網站部署上去。
+
+冷知識：這份教學手冊也是使用 Heroku 部署，程式碼在 <https://github.com/djangogirlstaipei/djangogirlstaipei>。
 
 
 ## 註冊 Heroku 帳號
