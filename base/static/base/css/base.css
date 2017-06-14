@@ -5,15 +5,15 @@ body {
 p {
     line-height: 1.6em;
 }
-a {
-    color: #476666;
+a, a:visited {
+    color: #27C5C0;
 }
 blockquote {
     font-size: 90%;
     color: #777;
 }
 a:hover, a:focus, a:active {
-    color: #286665;
+    color: #476666;
 }
 .navbar-default {
     background: #27C5C0;
