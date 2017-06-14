@@ -64,7 +64,7 @@
                     },
                     {
                         "title": "部署到 Heroku",
-                        "description": "網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。",
+                        "description": "另一個網站部署服務。",
                         "target": "tutorials/deploy-to-heroku"
                     }
                 ]
