@@ -12,9 +12,9 @@
                         "target": "tutorials/installation"
                     },
                     {
-                        "title": "Heroku 註冊與設定",
+                        "title": "PythonAnywhere 註冊與設定",
                         "description": "網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。",
-                        "target": "tutorials/setting-up-heroku"
+                        "target": "tutorials/setting-up-pythonanywhere"
                     }
                 ]
             },
@@ -27,11 +27,6 @@
                         "title": "命令列",
                         "description": "寫程式與平常操作電腦時最大的不同，就是會常常使用「命令列」。來看看命令列的用途究竟是什麼！",
                         "target": "tutorials/command-line"
-                    },
-                    {
-                        "title": "用 Git 進行版本控制",
-                        "description": "版本控制？這是什麼東西？其實你常常都會用到，真的！讀讀這篇，你就知道為什麼。:)",
-                        "target": "tutorials/version-control-with-git"
                     },
                     {
                         "title": "Python 入門",
@@ -54,6 +49,23 @@
                         "title": "Django 學習指南",
                         "description": "透過這份學習指南，你會學習到 Django 的程式架構，從創建一個專案，到最後將網站發佈到網路上，建立一個屬於自己的旅遊日記。",
                         "target": "http://djangogirlstaipei.gitbooks.io/django-girls-taipei-tutorial/"
+                    }
+                ]
+            },
+            {
+                "name": "extra",
+                "title": "進階教材",
+                "description": "看完了前面的教學，還意猶未盡嗎？下面的額外指南可以提供一些不同觀點和選擇。",
+                "posts": [
+                    {
+                        "title": "用 Git 進行版本控制",
+                        "description": "版本控制？這是什麼東西？其實你常常都會用到，真的！讀讀這篇，你就知道為什麼。:)",
+                        "target": "tutorials/version-control-with-git"
+                    },
+                    {
+                        "title": "部署到 Heroku",
+                        "description": "網站就是要給別人看的，所以不能只放在你自己的電腦上。讓我們來設定一個能把網站公佈給大家的服務。",
+                        "target": "tutorials/deploy-to-heroku"
                     }
                 ]
             }
