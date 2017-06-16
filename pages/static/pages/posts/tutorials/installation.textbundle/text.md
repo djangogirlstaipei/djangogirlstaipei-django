@@ -107,11 +107,11 @@ git config --global user.email "你的 email"
 
 我們推薦使用 [Homebrew](http://brew.sh) 安裝需要的工具。首先，按下螢幕右上角的放大鏡（它叫 Spotlight），並輸入「終端機」（英文：Terminal），像這樣：
 
-![OS X Spotlight 搜尋終端機](assets/osx/spotlight.png)
+![macOS Spotlight 搜尋終端機](assets/osx/spotlight.png)
 
 點一下第一個結果，應該會出現類似這樣的視窗：
 
-![OS X 終端機](assets/osx/terminal.png)
+![macOS 終端機](assets/osx/terminal.png)
 
 未來當我們說「打開終端機」時，就代表你需要打開一個這樣的視窗。你可能會想要把這個程式固定到 Dock 上，方便未來開啟。
 
@@ -125,25 +125,25 @@ git config --global user.email "你的 email"
 
 如果畫面停在這個狀態，請再按一次 Return：
 
-![OS X Homebrew 安裝初始畫面](assets/osx/homebrew-installation-start.png)
+![macOS Homebrew 安裝初始畫面](assets/osx/homebrew-installation-start.png)
 
 如果畫面顯示 `Password:`，請輸入你的管理者密碼。當你輸入時密碼並不會顯示在畫面上（也不會出現 `*****` 這樣！），請不要緊張，放心輸入後按下 Return 即可：
 
-![OS X 詢問密碼](assets/osx/password-prompt.png)
+![macOS 詢問密碼](assets/osx/password-prompt.png)
 
 接著應該會跳出一個這樣的視窗（如果沒有也沒關係，請直接跳到後面「已完成安裝此軟體」畫面之後的步驟）。請按「安裝」：
 
-![OS X 安裝命令列開發者工具](assets/osx/command-line-developer-tools-start.png)
+![macOS 安裝命令列開發者工具](assets/osx/command-line-developer-tools-start.png)
 
 在跳出的「命令列工具許可協議」視窗選擇同意，就會開始安裝。完成之後如果跳出這個畫面（如果沒有就跳過這步）：
 
-![OS X 命令列開發者工具安裝完成畫面](assets/osx/command-line-developer-tools-done.png)
+![macOS 命令列開發者工具安裝完成畫面](assets/osx/command-line-developer-tools-done.png)
 
 按下完成就可以關閉視窗。
 
 回到之前的終端機視窗。如果終端機畫面停在「Press any key when the installation has completed.」這行字，就再按一次 Return：
 
-![OS X Homebrew 等候命令列開發者工具安裝畫面](assets/osx/homebrew-installation-waiting.png)
+![macOS Homebrew 等候命令列開發者工具安裝畫面](assets/osx/homebrew-installation-waiting.png)
 
 接著繼續等待，直到出現
 
@@ -159,7 +159,7 @@ Read the analytics documentation (and how to opt-out) here:
 
 便代表安裝完成。現在你的終端機視窗應該類似下面這樣，最後一行是以 `$` 結尾：
 
-![OS X 完成 Homebrew 安裝後狀態](assets/osx/homebrew-installation-done.png)
+![macOS 完成 Homebrew 安裝後狀態](assets/osx/homebrew-installation-done.png)
 
 ### 安裝 Git 與 Python
 
@@ -180,7 +180,7 @@ git config --global user.email "你的 email"
 
 接著輸入 `python3` 檢查 Python 是否成功安裝。你應該會看到類似下面的畫面：
 
-![OS X Python Prompt](assets/osx/python-interactive.png)
+![macOS Python Prompt](assets/osx/python-interactive.png)
 
 就代表安裝完成了，恭喜！這個視窗可以直接關掉沒關係，可能會跳警告但是不用理它。
 

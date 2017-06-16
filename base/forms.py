@@ -10,7 +10,7 @@ class OSForm(forms.Form):
 
     OS_CHOICES = (
         (WINDOWS, _('Windows')),
-        (OSX, _('OS X')),
+        (OSX, _('macOS')),
         (LINUX, _('Linux')),
     )
 

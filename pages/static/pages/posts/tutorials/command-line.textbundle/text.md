@@ -21,9 +21,9 @@ os_switch: true
 
 ((( osx
 
-![OS X 終端機](assets/osx/terminal.png)
+![macOS 終端機](assets/osx/terminal.png)
 
-在 OS X 上，prompt 會顯示 `電腦名稱:現在位置 使用者名稱$` 這種格式。我們通常只關心「現在位置」的部分。在終端機裡，是用**路徑**來表示某個東西在電腦裡的位置。現在看到的 `~` 符號是一個特殊記號，代表你現在在「家」裡面。我們可以用 `pwd` 這個命令，來獲得我們目前的真正位置。輸入 `pwd` 並按 Return，你的終端機裡面應該會變成類似這樣：
+在 macOS 上，prompt 會顯示 `電腦名稱:現在位置 使用者名稱$` 這種格式。我們通常只關心「現在位置」的部分。在終端機裡，是用**路徑**來表示某個東西在電腦裡的位置。現在看到的 `~` 符號是一個特殊記號，代表你現在在「家」裡面。我們可以用 `pwd` 這個命令，來獲得我們目前的真正位置。輸入 `pwd` 並按 Return，你的終端機裡面應該會變成類似這樣：
 
 ```
 uranusjr:~ uranusjr$ pwd
@@ -86,7 +86,7 @@ dir /w
 )))
 
 ((( osx
-![OS X 終端機 ls](assets/osx/ls.png)
+![macOS 終端機 ls](assets/osx/ls.png)
 )))
 
 ((( linux
@@ -108,7 +108,7 @@ dir /w
 )))
 
 ((( osx
-![OS X Finder 家目錄](assets/osx/finder-home.png)
+![macOS Finder 家目錄](assets/osx/finder-home.png)
 )))
 
 ((( linux
@@ -124,11 +124,11 @@ dir /w
 
 ((( osx
 
-![OS X 文字編輯存檔](assets/osx/textedit-save.png)
+![macOS 文字編輯存檔](assets/osx/textedit-save.png)
 
 （我這裡用的是內建的**文字編輯.app**。你可以使用任何你慣用的程式，只要在家目錄存一個叫 `table.txt` 的檔案就好了！
 
-![OS X 文件 table.txt](assets/osx/finder-table-file.png)
+![macOS 文件 table.txt](assets/osx/finder-table-file.png)
 
 )))
 
