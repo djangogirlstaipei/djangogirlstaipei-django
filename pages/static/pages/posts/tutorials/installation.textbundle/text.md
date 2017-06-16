@@ -6,7 +6,7 @@ os_switch: true
 本節將引導你安裝並設定專案所需要的環境。我們會進行以下的步驟：
 
 1. 安裝 Git。
-2. 安裝 Python 3.5。
+2. 安裝 Python 3。
 
 ((( windows
 
@@ -38,7 +38,7 @@ os_switch: true
 
 ### 安裝 Python
 
-首先[下載 Python 3.5.1](https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe)。下載後雙擊安裝檔。如果你看到確認執行應用程式的視窗：
+首先[下載 Python 3.6.1](https://www.python.org/ftp/python/3.6.1/python-3.6.1.exe)。下載後雙擊安裝檔。如果你看到確認執行應用程式的視窗：
 
 ![Python 確認執行視窗](assets/windows/python-run-alert.png)
 
@@ -52,7 +52,7 @@ os_switch: true
 
 ![Python 安裝根目錄畫面](assets/windows/python-installation-root.png)
 
-把「Customize install location」下面文字框內的文字同樣記到記事本裡。現在你的記事本應該會長這樣：
+把「Customize install location」下面文字框內的文字同樣記到記事本裡。現在你的記事本應該會類似這樣（路徑可能略有不同）：
 
 ![將 Python 安裝根目錄記錄於記事本](assets/windows/python-record-path.png)
 
@@ -60,11 +60,17 @@ os_switch: true
 
 ![Python 安裝完成畫面](assets/windows/python-installation-done.png)
 
-就代表安裝完成了！
+就代表安裝完成了！直接按 *Close* 關閉即可。
 
 ### 建立開發用捷徑
 
-接著請下載[這個檔案](http://d.pr/f/ZXEz)，然後按兩下執行它。還記得剛剛我們在記事本寫的那兩行嗎？請依序把它們拷貝起來，在出現的視窗裡依序**按右鍵選擇貼上**，然後按「確定」。看起來應該會像這樣：
+接著請下載[這個檔案](http://d.pr/f/SyJKva)，然後按兩下執行它。如果你看到確認執行應用程式的視窗：
+
+![create-env.vbs 確認執行視窗](assets/windows/create-env-run-alert.png)
+
+請選擇「執行」。
+
+還記得剛剛我們在記事本寫的那兩行嗎？請依序把它們拷貝起來，在出現的視窗裡依序**按右鍵選擇貼上**，然後按「確定」。看起來應該會像這樣：
 
 ![create-env.vbs 操作過程：Git 路徑](assets/windows/create-env-git-path-prompt.png)
 
