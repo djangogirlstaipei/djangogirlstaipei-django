@@ -137,30 +137,21 @@ git config --global user.email "你的 email"
 
 ![macOS 詢問密碼](assets/osx/password-prompt.png)
 
-接著應該會跳出一個這樣的視窗（如果沒有也沒關係，請直接跳到後面「已安裝此軟體。」畫面之後的步驟）。請按「安裝」：
+接著系統會開始下載、安裝必要元件，應該會花一些時間，請耐心等待。
 
-![macOS 安裝命令列開發者工具](assets/osx/command-line-developer-tools-start.png)
-
-在跳出的「命令列工具許可協議」視窗選擇同意，就會開始安裝。完成之後如果跳出這個畫面（如果沒有就跳過這步）：
-
-![macOS 命令列開發者工具安裝完成畫面](assets/osx/command-line-developer-tools-done.png)
-
-按下完成就可以關閉視窗。
-
-回到之前的終端機視窗。如果終端機畫面停在「Press any key when the installation has completed.」這行字，就再按一次 Return：
-
-![macOS Homebrew 等候命令列開發者工具安裝畫面](assets/osx/homebrew-installation-waiting.png)
-
-接著繼續等待，直到出現
+直到出現下面的文字：
 
 ```
 ==> Installation successful!
-==> Next steps
-Run `brew help` to get started
-Further documentation: https://git.io/brew-docs
-==> Homebrew has enabled anonymous aggregate user behaviour analytics
+
+==> Homebrew has enabled anonymous aggregate user behaviour analytics.
 Read the analytics documentation (and how to opt-out) here:
-  https://git.io/brew-analytics
+  http://docs.brew.sh/Analytics.html
+
+==> Next steps:
+- Run `brew help` to get started
+- Further documentation:
+    http://docs.brew.sh
 ```
 
 便代表安裝完成。現在你的終端機視窗應該類似下面這樣，最後一行是以 `$` 結尾：
