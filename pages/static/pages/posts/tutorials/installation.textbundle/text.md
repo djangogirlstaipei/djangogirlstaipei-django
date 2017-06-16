@@ -131,7 +131,7 @@ git config --global user.email "你的 email"
 
 ![macOS 詢問密碼](assets/osx/password-prompt.png)
 
-接著應該會跳出一個這樣的視窗（如果沒有也沒關係，請直接跳到後面「已完成安裝此軟體」畫面之後的步驟）。請按「安裝」：
+接著應該會跳出一個這樣的視窗（如果沒有也沒關係，請直接跳到後面「已安裝此軟體。」畫面之後的步驟）。請按「安裝」：
 
 ![macOS 安裝命令列開發者工具](assets/osx/command-line-developer-tools-start.png)
 
