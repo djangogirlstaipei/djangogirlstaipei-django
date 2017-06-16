@@ -57,7 +57,7 @@ footer {
 footer p {
     margin: 0;
 }
-footer a {
+footer a, footer a:visited {
     color: #D7FFF7;
 }
 footer a:hover, footer a:focus, footer a:active {
