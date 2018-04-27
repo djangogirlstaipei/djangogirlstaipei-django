@@ -1,5 +1,6 @@
 import dj_database_url
 
+from .base import *     # noqa
 from .base import get_env_var, DATABASES
 
 SECRET_KEY = get_env_var('DJANGO_SECRET_KEY')
