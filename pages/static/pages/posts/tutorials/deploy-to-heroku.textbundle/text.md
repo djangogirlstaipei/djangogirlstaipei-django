@@ -1,5 +1,5 @@
 ---
-title: "用 Heroku 部署網站"
+title: "部署到 Heroku"
 os_switch: true
 ---
 
