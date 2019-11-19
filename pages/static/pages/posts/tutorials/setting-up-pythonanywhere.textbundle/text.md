@@ -1,5 +1,5 @@
 ---
-title: "設定 PythonAnywhere"
+title: "PythonAnywhere 註冊與設定"
 ---
 
 當你的網站完成後，我們必須找個公開的地方來放它，才能讓它被全世界(!)看到。不過在那之前，我們必須先設定一下。在這個教學中，我們會帶領你設定 **[PythonAnywhere](https://www.pythonanywhere.com)** 這個在雲端執行 Python 程式的服務。

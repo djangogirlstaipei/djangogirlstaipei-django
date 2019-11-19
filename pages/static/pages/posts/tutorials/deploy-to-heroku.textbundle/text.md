@@ -1,5 +1,5 @@
 ---
-title: "用 Heroku 部署網站"
+title: "部署到 Heroku"
 os_switch: true
 ---
 
@@ -56,7 +56,7 @@ os_switch: true
 ```console
 wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 ---osx
-brew install heroku
+brew install heroku/brew/heroku
 ```
 
 )))
